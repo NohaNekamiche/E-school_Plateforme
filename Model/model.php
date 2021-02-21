@@ -7,9 +7,9 @@ class model{
     private $password='';
     private $conn=null;
     private function connexion(){
-        $dns="mysql:host=$host;dbname=$db";
+        $dns="mysql:host=$this->host;dbname=$this->db";
         try{
-            $conn=new PDO($dns, $user, $password);
+            $this->conn=new PDO($dns, $this->user, $this->password);
         }
         catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -18,11 +18,11 @@ class model{
     }
 
     private function deconnexion(&$conn){
-        $conn=null;
+        $this->conn=null;
     }
 
     private function request($req){
-        $conn->query($req);
+        $this->conn->query($req);
 
     }
 }
