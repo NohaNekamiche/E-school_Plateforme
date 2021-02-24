@@ -6,7 +6,7 @@ class model{
     private $user='root';
     private $password='';
     private $conn=null;
-    private function connexion(){
+    private static function connexion(){
         $dns="mysql:host=$this->host;dbname=$this->db";
         try{
             $this->conn=new PDO($dns, $this->user, $this->password);
@@ -21,9 +21,17 @@ class model{
         $this->conn=null;
     }
 
-    private function request($req){
-        $this->conn->query($req);
-
+    private static function request($req){
+        $stmt=$this->conn->prepare($req);
+        $stmt->execute(array());
+        return self::fetchAll($stmt);
+    }
+    private static function fetchAll($resultatRequete){
+        if($resultatRequete){
+            return $resultatRequete->fetchAll();
+        }else{
+            return false;
+        }
     }
 }
 ?>

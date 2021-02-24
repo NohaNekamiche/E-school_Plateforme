@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<?php?>
-
 <html>
     <head>
         <title>Login form</title>
@@ -10,23 +8,16 @@
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
     <body>
-        <div class="main-block">
-            <h1>Login</h1>
-            <form method="post" >
-                <hr>
-                <label id="icon" for="name"><i class="fas fa-user"></i></label>
-                <input type="text" name="username" id="name" placeholder="Username" required/>
-                
-                <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-                <input type="password" name="password" id="name" placeholder="Password" required/>
-                <hr>
-                <div class="btn-block">
-                    <button type="submit" name="Login">Login</button>
-                    
-                  </div>
-            </form>
-        </div>        
+    <?php
+            require_once '/Vue/LoginVue.php';
 
+            $log= new LoginVue();
+
+            $log->getForm();
+            if(isset($_POST["Login"])){
+                $log->login($_POST['username'],$_POST['password']);
+            }
+        ?>
 
 
     </body>
