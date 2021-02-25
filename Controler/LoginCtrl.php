@@ -22,7 +22,7 @@ public function login($username,$password){
     if($auth){
         $_SESSION['username']   = $username;
         $_SESSION['password']   = $password;
-        $_SESSION['userId']   = $users[0]["id"];
+        $_SESSION['userId']   = $users[0]["idUser"];
         $_SESSION['auth'] = true;
     }else {
         $_SESSION['auth'] = false;

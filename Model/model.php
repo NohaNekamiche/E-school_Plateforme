@@ -1,32 +1,38 @@
 <?php
 
 class model{
-    private $db='e-school';
-    private $host='127.0.0.1';
-    private $user='root';
-    private $password='';
-    private $conn=null;
-    private static function connexion(){
-        $dns="mysql:host=$this->host;dbname=$this->db";
+  
+    private static $conn;
+    private static $isConnected = false;
+    public static function connexion(){
+        require_once __DIR__.'/dbConfig.php' ;
+        if(!model::$isConnected){
         try{
-            $this->conn=new PDO($dns, $this->user, $this->password);
+            //self::$conn = new PDO($dns, $user, $password);
+            self::$conn = new PDO('mysql:host=localhost;dbname=e-school','root','');
+
+            self::$isConnected = true;
         }
         catch(PDOException $e) {
             echo "Error: " . $e->getMessage();
             exit();
           }
+        }
     }
 
-    private function deconnexion(&$conn){
+    public function deconnexion(&$conn){
         $this->conn=null;
     }
 
-    private static function request($req){
-        $stmt=$this->conn->prepare($req);
+    public static function request($req){
+        $stmt=self::$conn->prepare($req);
         $stmt->execute(array());
         return self::fetchAll($stmt);
     }
-    private static function fetchAll($resultatRequete){
+    public static function addRequest($req){
+        self::$conn->exec($req);
+    }
+    public static function fetchAll($resultatRequete){
         if($resultatRequete){
             return $resultatRequete->fetchAll();
         }else{

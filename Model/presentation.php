@@ -1,19 +1,14 @@
 <?php
+
+require_once (__DIR__."/model.php");
 class presentation{
-    private $paragraph;
-    private $imgUrl;
-    public function __construct(){
+   
 
-    }
-
-    public function ajouterPresentation($request){
-        $cf=new model();
-        $cf->connexion();
-        $sql= "INSERT INTO presentation ( paragraph,imgUrl)
-                VALUES ('$request->paragraph','$request->imgUrl')";
-    
-        $cf->request($sql);
-        $cf->deconnexion();
+    public STATIC function ajouterPresentation($paragraph,$imgUrl){
+        $db =model::connexion();
+        $sql= "INSERT INTO presentation (paragraph,imgUrl)
+                VALUES ('$paragraph','$imgUrl')";
+        model::addRequest($sql);
     }
 
     public function ListePresentation(){

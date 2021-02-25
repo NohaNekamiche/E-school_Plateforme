@@ -10,9 +10,8 @@ class user{
         $auth = false;
     }
 
-    public function login($username,$password){
-        $db =model::connect();
-
+    public static function login($username,$password){
+        $db =model::connexion();
         $requete = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $users= model::request($requete);
         foreach ($users as $user) {

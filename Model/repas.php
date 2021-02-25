@@ -1,23 +1,12 @@
 <?php
+require_once (__DIR__."/model.php");
 class repas{
-    private $titre;
-    private $description;
-    private $img;
+    public static function ajouterRepas($nom,$imgUrl,$description,$jour){
+        $db =model::connexion();
+        $requete = "INSERT INTO repas ( nom,description	,imgUrl,jour)
+                VALUES ('$nom','$description','$imgUrl','$jour')";
+        model::addRequest($requete);
 
-
-    public function __construct($titre,$description,$img){
-        $this->titre=$titre;
-        $this->description=$description;
-        $this->img=$img;
-    }
-   public function setTitre($titre){
-        $this->titre=$titre;
-    }
-    public function setDescript($description){
-        $this->description=$description;
-    }
-    public function setDescript($img){
-        $this->img=$img;
     }
 }
 ?>
