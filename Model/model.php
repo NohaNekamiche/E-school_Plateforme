@@ -39,5 +39,10 @@ class model{
             return false;
         }
     }
+
+    public static function getIdOfInsertElement($req){
+        self::$conn->exec($req);
+        return self::$conn->lastInsertId();
+    }
 }
 ?>

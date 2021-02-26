@@ -22,14 +22,11 @@ class user{
         return $users;
     }
 
-    public function ajouterUser($request){
-        $cf=new model();
-        $cf->connexion();
-        $sql= "INSERT INTO presentation ( paragraph,imgUrl)
-                VALUES ('$request->paragraph','$request->imgUrl')";
-    
-        $cf->request($sql);
-        $cf->deconnexion();
+    public static function ajouterUser($email,$password,$username){
+        $db=model::connexion();
+        $requete= "INSERT INTO users (email,password,username)
+        VALUES ('$email','$password','$username')";
+        return model::getIdOfInsertElement($requete);
     }
 
     public function modifierPassword($email,$odlpwd,$newpwd){

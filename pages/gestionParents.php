@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="testbox">
-    <form action="/">
+    <form method="post">
       <div class="banner">
         <h1>Gestion des Parents d'éleve Tuteur</h1>
       </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="item">
                     <label for="email">Email<span>*</span></label>
-                    <input id="email" type="text" name="text" required/>
+                    <input id="email" type="text" name="email" required/>
             </div>
           </div>
           
@@ -58,9 +58,17 @@
       </div>
       <fieldset>
       <div class="btn-block">
-      <button type="submit" href="/">APPLY</button>
+      <button type="submit" name="Ajouter">Ajouter Parent</button>
       </div>
     </form>
     </div>
+    <?php
+          require_once '../Controler/parentCtrl.php';
+            if(isset($_POST["Ajouter"])){
+              $ctrl= new parentCtrl();
+              $ctrl->ajouterParent($_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['date'],
+              $_POST['address'],$_POST['num1'],$_POST['num2'],$_POST['num3']);
+            }
+        ?>
   </body>
 </html>

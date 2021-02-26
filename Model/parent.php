@@ -1,7 +1,17 @@
 <?php
 
+require_once (__DIR__."/model.php");
+require_once (__DIR__."/user.php");
+class parents{
 
-class parent{
-    
+    public static function  ajouterParent($email,$nom,$prenom,$dateNaiss,$adress,$numTel1,$numTel2,$numTel3){
+        //$db=model::connexion();
+        $password=$nom.$prenom;
+        $id=user::ajouterUser($email,$password,$prenom);
+        $requete= "INSERT INTO parents (nom,prenom,dateNais,adress,numTel1,numTel2,numTel3,idUser)
+        VALUES ('$nom','$prenom','$dateNaiss','$adress','$numTel1','$numTel2','$numTel3','$id')";
+        return model::getIdOfInsertElement($requete);
+
+    }
 }
 ?>
