@@ -20,7 +20,6 @@ class LoginVue{
                 <hr>
                 <label id="icon" for="name"><i class="fas fa-user"></i></label>
                 <input type="text" name="username" id="name" placeholder="Username" required/>
-                
                 <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
                 <input type="password" name="password" id="name" placeholder="Password" required/>
                 <hr>

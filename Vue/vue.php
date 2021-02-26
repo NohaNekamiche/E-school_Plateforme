@@ -24,14 +24,17 @@
   </head>
   <body>
       <?php
-      require_once ("../Model/model.php");
-      $db =model::connexion();
-      $requete = "SELECT imgUrl FROM diaporama ORDER BY id ASC ";
-      $result=model::request($requete);
+      require_once ("./components/AccuielEcoleElements.php");
+
+      $diaporama=new AccuielEcoleElements();
+      //$db =model::connexion();
+      //$requete = "SELECT imgUrl FROM diaporama ORDER BY id ASC ";
+      //$result=model::request($requete);
+      $result=$diaporama->getSlides();
+      $diaporama-> getDiaporama($result);
       ?>
       <h1>request </h1>
       <div class="container">
-
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -49,7 +52,6 @@
                         <li data-target="#myCarousel" data-slide-to="2"></li-->
                         <?php $i++;}?>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <?php 
@@ -58,11 +60,10 @@
                             $actives='';
                             if($i == 0){
                                 $actives='active';
-
                             }
                         ?>
                         <div class="item <?= $actives; ?>">
-                        <img src="<?= $row['imgUrl'] ?>" width="70%" height="400" >
+                        <img src="<?= $row['imgUrl'] ?>" width="70%" height="20%" >
                         </div> 
                         <?php $i++;}?>
                     </div>

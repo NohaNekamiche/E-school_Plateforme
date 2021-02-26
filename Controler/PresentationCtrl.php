@@ -28,5 +28,8 @@ class PresentationCtrl{
         }
     }
         
+    public function listePresentation(){
+        return presentation::ListePresentation();
+    }
 }
 ?>

@@ -10,6 +10,13 @@ class diaporama{
         return $result;
     }
 
+    public static function ajouterImg($img){
+        $db=model::connexion();
+        $requeste="INSERT INTO diaporama (imgUrl)
+        VALUES ('$img')";
+        model::addRequest($requeste);
+    }
+
 }
 
 

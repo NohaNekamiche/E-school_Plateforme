@@ -11,12 +11,11 @@ class presentation{
         model::addRequest($sql);
     }
 
-    public function ListePresentation(){
-        $cf=new model();
-        $cf->connexion();
+    public static function ListePresentation(){
+        $db =model::connexion();
         $sql= "SELECT * FROM  presentation ";
-        $cf->request($sql);
-        $cf->deconnexion();
+        $result=model::request($sql);
+        return $result;
     }
 
 }

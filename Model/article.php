@@ -12,7 +12,7 @@ class article{
     }*/
     public static function ajouterArticle($titre,$img,$description,$concerne){
         $db =model::connexion();
-        $requete = "INSERT INTO articles ( titre,descrption,imageUrl,concerner)
+        $requete = "INSERT INTO articles (titre,descrption,imageUrl,concerner)
                 VALUES ('$titre','$description','$img','$concerne')";
         model::addRequest($requete);
 

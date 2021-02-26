@@ -564,7 +564,7 @@ section {
 #header .logo {
     text-align: right;
     display: inline-block;	
-    width: 90%;
+    width: 100%;
     height: 100px;
     line-height: 100px;
 }
@@ -576,13 +576,6 @@ section {
 	font-weight: 700;
 	margin-right: 100px;
 }
-.img-circular{
-    width: 200px;
-    height: 200px;
-    background-image: url('http://strawberry-fest.org/wp-content/uploads/2012/01/Coca-Cola-logo.jpg');
-    background-size: cover;
-    display: block;
-   }
 
 
 /* Footer */

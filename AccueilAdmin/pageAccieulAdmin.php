@@ -120,8 +120,8 @@
                   </ul>
                 </li>
                 <li><a href="../pages/RestaurationVue.php">Gestion de Restauration</a></li>
-                <li><a href="">Gestion de Page Contact</a></li>
-                <li><a href="">Gestion de Diaporama et Design</a></li>
+                <li><a href="../pages/ContactVue.php">Gestion de Page Contact</a></li>
+                <li><a href="../pages/DiaporamaVue.php">Gestion de Diaporama et Design</a></li>
               </ul>
             </nav>
 
