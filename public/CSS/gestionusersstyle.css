@@ -113,6 +113,7 @@ html, body {
     margin-top: 10px;
     text-align: center;
     }
+    
     button {
     width: 150px;
     padding: 10px;
@@ -126,6 +127,15 @@ html, body {
     button:hover {
     background: #4286f4;
     }
+    table {
+        border-collapse: collapse;
+      }
+      
+      td, th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+        text-align: left;
+      }
     @media (min-width: 568px) {
     .name-item, .city-item {
     display: flex;
@@ -142,3 +152,4 @@ html, body {
     padding-bottom:5px;
     }
     }
+    

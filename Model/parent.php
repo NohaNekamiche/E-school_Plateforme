@@ -16,5 +16,12 @@ class parents{
     public static function getLastInsert(){
         return model::getLastId();
     }
+
+    public static function getAllParents(){
+        model::connexion();
+        $requete="SELECT * From parents";
+        $result=model::request($requete);
+        return $result;
+    }
 }
 ?>

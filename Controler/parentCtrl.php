@@ -12,5 +12,10 @@ class parentCtrl{
     public function getLastInsert(){
         return parents::getLastInsert();
     }
+
+
+    public function getAllParents(){
+        return parents::getAllParents();
+    }
 }
 ?>
