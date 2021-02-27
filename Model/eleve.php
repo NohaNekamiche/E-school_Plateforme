@@ -12,5 +12,12 @@ class eleve{
         return model::getIdOfInsertElement($requete);
     }
 
+    public static function getAllEleves(){
+        model::connexion();
+        $requete="SELECT * From eleves";
+        $result=model::request($requete);
+        return $result;
+    }
+
 }
 ?>

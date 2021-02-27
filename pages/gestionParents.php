@@ -12,7 +12,6 @@ session_start();
   </head>
   <body>
     <div class="testbox">
-    <div >
       <table >
       <caption >Liste des Parents D'éleves</caption>
       <thead>
@@ -55,7 +54,48 @@ session_start();
 
       </table>
       </div>
-    </div>
+
+      <div class="testbox">
+      <table >
+      <caption >Liste D'éleves</caption>
+      <thead>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de Naissance</th>
+      <th>N° Tel </th>
+      <th>N° Tel </th>
+      <th>N° Tel </th>
+      <th colspan="2">Action </th>
+     </thead>
+     <?php 
+          require_once "../Controler/EleveCtrl.php";
+          $ctrl=new EleveCtrl();
+          $result1=$ctrl->getAllEleves();
+          foreach($result1 as $eleve){
+      ?>
+            <tr>
+            <th scope="row"> <?php  echo $eleve['id'];?></th>
+            <td> <?php  echo $eleve['nom'];?></td>
+            <td> <?php  echo $eleve['prenom'];?></td>
+            <td> <?php  echo $eleve['dateNais'];?></td>
+            <td> <?php  echo $eleve['NumTel1'];?></td>
+            <td> <?php  echo $eleve['NumTel2'];?></td>
+            <td> <?php  echo $eleve['NumTel3'];?></td>
+            <td> <a href="gestionParents.php?editEleve=<?php echo $eleve['id']?>"
+              ><button class="btn-block">Modifier</button></a>
+            
+            </td>
+            <td>
+            <a href="gestionParents.php?deleteEleve=<?php echo $eleve['id']?>"
+              ><button class="btn-block">Supprimer</button></a>
+            </td>
+            </td>
+          
+            </tr>
+      <?php }?>
+       </table>
+      </div>
     <?php
           require_once "../Vue/parentsVue.php";
           require_once '../Controler/EleveCtrl.php';

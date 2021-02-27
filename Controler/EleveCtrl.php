@@ -12,5 +12,9 @@ class  EleveCtrl{
 
         eleve::addEvele($email,$nom,$prenom,$dateNais,$idParent,$idNiv,$numTel1,$numTel2,$numTel3);
     }
+
+    public function getAllEleves(){
+        return eleve::getAllEleves();
+    }
 }
 ?>
