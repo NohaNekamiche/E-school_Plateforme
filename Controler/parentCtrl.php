@@ -17,5 +17,8 @@ class parentCtrl{
     public function getAllParents(){
         return parents::getAllParents();
     }
+    public function deleteParentById($id,$idUser){
+        parents::deleteParentById($id,$idUser);
+    }
 }
 ?>

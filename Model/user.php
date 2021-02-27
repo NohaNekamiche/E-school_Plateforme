@@ -36,5 +36,11 @@ class user{
     public static function isAuth(){
         return self::$auth;
     }
+
+    public static function deleteUserById($idUser){
+        model::connexion();
+        $requete="DELETE FROM users WHERE id='$idUser'";
+        model::delete($requete);
+    }
 }
 ?>

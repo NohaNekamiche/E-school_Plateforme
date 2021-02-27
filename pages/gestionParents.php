@@ -41,7 +41,13 @@ session_start();
             <td> <?php  echo $row['numTel2'];?></td>
             <td> <?php  echo $row['numTel3'];?></td>
             <td> <a href="gestionParents.php?edit=<?php echo $row['id']?>"
-              ><button class="btn-block">Modifier</button></a></td>
+              ><button class="btn-block">Modifier</button></a>
+            
+            </td>
+            <td>
+            <a href="gestionParents.php?delete=<?php echo $row['id']?>"
+              ><button class="btn-block">Supprimer</button></a>
+            </td>
             </td>
             </tr>
       <?php }?>
@@ -53,6 +59,19 @@ session_start();
     <?php
           require_once "../Vue/parentsVue.php";
           require_once '../Controler/EleveCtrl.php';
+          //edit parents
+          if(isset($_GET['delete']))
+          {
+              $id=$_GET['delete'];
+              echo $row['idUser'];
+              $ctrl->deleteParentById($id, $row['idUser']);
+          }
+          if(isset($_GET['edit'])){
+            echo $_GET['edit'];
+          }
+
+          //delete parents
+          //get form parent
           $vue=new parentsVue();
           $vue-> getFormParent();
           $vue->getFormEnfant();

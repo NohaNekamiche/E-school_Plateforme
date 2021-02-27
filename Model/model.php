@@ -47,5 +47,15 @@ class model{
     public static function getLastId(){
         return self::$conn->lastInsertId();
     }
+
+    public static function delete($request){
+        self::$conn->exec($request);
+    }
+
+    public static function getField($requeste){
+        self::$conn->prepare($requeste);
+        $field=self::$conn->exec($requeste);
+        return $field;
+    }
 }
 ?>

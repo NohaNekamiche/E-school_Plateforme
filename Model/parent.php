@@ -23,5 +23,20 @@ class parents{
         $result=model::request($requete);
         return $result;
     }
+
+  /*  public static function getIdUserParent($id){
+        model::connexion();
+        $requeste="SELECT idUser FROM parents WHERE id='$id'"
+        $result=model::request($requeste);
+        return $result;
+    }*/
+    public static function deleteParentById($id,$idUser){
+            model::connexion();
+            // user::deleteUserById($idUser);
+            $requeste="DELETE FROM parents WHERE id='$id'";
+            $requete="DELETE FROM users WHERE idUser='$idUser'";
+            model::delete($requete);
+            model::delete($requeste);
+    }
 }
 ?>
