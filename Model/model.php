@@ -44,5 +44,8 @@ class model{
         self::$conn->exec($req);
         return self::$conn->lastInsertId();
     }
+    public static function getLastId(){
+        return self::$conn->lastInsertId();
+    }
 }
 ?>

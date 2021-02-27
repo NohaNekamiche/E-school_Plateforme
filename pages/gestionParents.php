@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,9 +26,8 @@
             <div>
                 <input type="text" name="prenom" placeholder="Prenom" required />
             </div>
-            <div class="item">
-                    <label for="email">Email<span>*</span></label>
-                    <input id="email" type="text" name="email" required/>
+            <div >
+                    <input id="email" type="text" name="email" placeholder="Email" required/>
             </div>
           </div>
           
@@ -60,15 +62,81 @@
       <div class="btn-block">
       <button type="submit" name="Ajouter">Ajouter Parent</button>
       </div>
+      </fieldset>
+      <hr/>
+</form>
+</div>
+<div class="testbox">
+      <form method="post">
+      <fieldset>
+      <legend>Creer compte de chaque Enfant</legend>
+      <div class="item">
+          <div class="name-item">
+            <div>
+                <input type="text" name="nomE" placeholder="Nom" required />
+            </div>
+            <div>
+                <input type="text" name="prenomE" placeholder="Prenom" required />
+            </div>
+            <div >
+                    <input id="email" type="text" name="emailE" placeholder="Email" required/>
+            </div>
+          </div>
+          
+        </div>
+      </fieldset>
+      <hr/>
+      <fieldset>
+      <legend>Information de chaque Enfant</legend>
+      <div class="item">
+          <div class="name-item">
+            <div>
+                <input type="text" name="num1E" placeholder="Numero Tel 1" required/>
+            </div>
+            <div>
+                <input type="text" name="num2E" placeholder="Numero Tel 2" required/>
+            </div>
+            <div>
+                <input type="text" name="num3E" placeholder="Numero Tel 3" required/>
+            </div>
+          </div>
+          
+        </div>
+      <div class="item">
+      <label for="bdate">Date de Naissance<span>*</span></label>
+      <input id="bdate" type="date" name="dateE" required/>
+      <i class="fas fa-calendar-alt"></i>
+      </div>
+      </fieldset>
+      <hr/>
+      <fieldset>
+      <div class="btn-block">
+      <button type="submit" name="AjouterEnfant">Ajouter Enfant</button>
+      </div>
+      </fieldset>
     </form>
     </div>
     <?php
           require_once '../Controler/parentCtrl.php';
+          require_once '../Controler/EleveCtrl.php';
+
             if(isset($_POST["Ajouter"])){
               $ctrl= new parentCtrl();
-              $ctrl->ajouterParent($_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['date'],
+              $_SESSION['idParent']=$ctrl->ajouterParent($_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['date'],
               $_POST['address'],$_POST['num1'],$_POST['num2'],$_POST['num3']);
+            
+           //   $id=$_SESSION['idParent'];
+         
+            }else
+            {
+              if(isset($_POST['AjouterEnfant'])){
+              $ctrlEleve=new EleveCtrl();
+              $idNiv=1;
+              $id=$_SESSION['idParent'];
+              $ctrlEleve->addEvele($_POST['emailE'],$_POST['nomE'],$_POST['prenomE'],$_POST['dateE'],$id,$idNiv,
+              $_POST['num1E'],$_POST['num2E'],$_POST['num3E']);}
             }
+            
         ?>
   </body>
 </html>

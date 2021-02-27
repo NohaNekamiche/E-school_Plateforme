@@ -9,5 +9,8 @@ class parentCtrl{
     public function ajouterParent($email,$nom,$prenom,$dateNaiss,$adress,$numTel1,$numTel2,$numTel3){
         return parents::ajouterParent($email,$nom,$prenom,$dateNaiss,$adress,$numTel1,$numTel2,$numTel3);
     }
+    public function getLastInsert(){
+        return parents::getLastInsert();
+    }
 }
 ?>

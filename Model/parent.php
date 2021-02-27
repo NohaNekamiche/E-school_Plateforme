@@ -13,5 +13,8 @@ class parents{
         return model::getIdOfInsertElement($requete);
 
     }
+    public static function getLastInsert(){
+        return model::getLastId();
+    }
 }
 ?>
