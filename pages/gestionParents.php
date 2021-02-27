@@ -119,7 +119,7 @@ session_start();
     <?php
           require_once '../Controler/parentCtrl.php';
           require_once '../Controler/EleveCtrl.php';
-
+        
             if(isset($_POST["Ajouter"])){
               $ctrl= new parentCtrl();
               $_SESSION['idParent']=$ctrl->ajouterParent($_POST['email'],$_POST['nom'],$_POST['prenom'],$_POST['date'],

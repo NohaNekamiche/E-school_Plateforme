@@ -114,8 +114,8 @@
                 <li>
                   <span class="opener">Gestion des utilisateurs</span>
                   <ul>
-                    <li><a href="">Enseignants</a></li>
-                    <li><a href="">Eleves</a></li>
+                    <li><a href="../pages/gestionEnseignant.php">Enseignants</a></li>
+                    <li><a href="../pages/gestionParents.php">Eleves</a></li>
                     <li><a href="">Parents d'éleve</a></li>
                   </ul>
                 </li>
