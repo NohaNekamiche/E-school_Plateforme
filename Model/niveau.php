@@ -16,5 +16,10 @@ class niveau{
         $result=model::request($request);
         return $result;
     }
+    public static function getNivId($cycle,$annee,$grp){
+        model::connexion();
+        $request="SELECT idNiv FROM niveau WHERE annee='$annee' AND grp='$grp' AND cycle='$cycle'";
+        return model::request($request);
+    }
 }
 ?>

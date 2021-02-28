@@ -15,5 +15,8 @@ class niveauCtrl{
     public function getNiveauById($id){
        return niveau::getNiveauById($id);
     }
+    public function getNivId($cycle,$annee,$grp){
+        return niveau::getNivId($cycle,$annee,$grp);
+    }
 }
 ?>

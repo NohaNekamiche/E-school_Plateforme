@@ -57,6 +57,20 @@
         <fieldset>
         <legend>Gestion de class d'Enseignant </legend>
         <div class="item">
+          <div class="name-item">
+              <select name="prof"> 
+                  <?php
+                   require_once "../Controler/enseignantCtrl.php";
+                   $ctrl=new enseignantCtrl();
+                   $result=$ctrl-> getAllEnseignants();
+                   foreach($result as $row){
+                       echo "<option value='" . $row['id'] . "'>" . $row['nom'] ."  ".$row['prenom'] . "</option>";
+                   }
+                  ?>
+              </select>
+          </div>
+        </div>
+        <div class="item">
             <div class="name-item">
                    <label> Cycle d'etude</label>
                   <select name="cycle"> 
@@ -74,7 +88,7 @@
               <select name="annee"> 
                   <?php
                    foreach($result as $niv){
-                    echo "<option value='" . $niv['idNiv'] . "'>" .$niv['annee'] . "</option>";
+                    echo "<option value='" . $niv['annee'] . "'>" .$niv['annee'] . "</option>";
                    }
                   ?>
                     </select>
@@ -96,7 +110,7 @@
         
         <fieldset>
         <div class="btn-block">
-        <button type="submit" name="Ajouter">Ajouter Enseignant</button>
+        <button type="submit" name="Ajouter">Ajouter</button>
         </div>
         </fieldset>
         <hr/>
@@ -111,9 +125,16 @@
 ?-->
 <?php
 require_once "../Controler/receptionCtrl.php";
+require_once "../Controler/niveauCtrl.php";
 $recp=new receptionCtrl();
+$nivCtrl= new niveauCtrl();
 if(isset($_POST['recp'])){
 $recp->insertReception($_POST['prof'],$_POST['heure'],$_POST['jour']);
+}
+if(isset($_POST['Ajouter'])){
+$niv=$nivCtrl->getNivId($_POST['cycle'],$_POST['annee'],$_POST['grp']);
+
+
 }
 ?>
 </body>
