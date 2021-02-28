@@ -82,15 +82,15 @@ session_start();
       ?>
             <tr>
             <th scope="row"> <?php  echo $eleve['id'];?></th>
-            <td> <?php  echo $eleve['nom'];?></td>
-            <td> <?php  echo $eleve['prenom'];?></td>
-            <td> <?php  echo $eleve['dateNais'];?></td>
-            <td><?php  echo $niv[0]['annee'] ?></td>
-            <td><?php  echo $niv[0]['grp'] ?></td>
-            <td><?php  echo $niv[0]['cycle'] ?></td>
-            <td> <?php  echo $eleve['NumTel1'];?></td>
-            <td> <?php  echo $eleve['NumTel2'];?></td>
-            <td> <?php  echo $eleve['NumTel3'];?></td>
+            <td name="n"> <?php  echo $eleve['nom'];?></td>
+            <td name="p"> <?php  echo $eleve['prenom'];?></td>
+            <td name="d"> <?php  echo $eleve['dateNais'];?></td>
+            <td name="a"><?php  echo $niv[0]['annee'] ?></td>
+            <td name="g"><?php  echo $niv[0]['grp'] ?></td>
+            <td name="c"><?php  echo $niv[0]['cycle'] ?></td>
+            <td name="n1"> <?php  echo $eleve['NumTel1'];?></td>
+            <td name="n2"> <?php  echo $eleve['NumTel2'];?></td>
+            <td name="n3"> <?php  echo $eleve['NumTel3'];?></td>
             <td> <a href="gestionParents.php?editEleve=<?php echo $eleve['id']?>"
               ><button class="btn-block">Modifier</button></a>
             
@@ -117,6 +117,7 @@ session_start();
           }
           if(isset($_GET['edit'])){
             echo $_GET['edit'];
+            $id=$_GET['edit'];
           }
 
           //delete parents
@@ -131,6 +132,13 @@ session_start();
               if(isset($_POST['AjouterEnfant'])){
              $vue->insertEnfant();
              ;}
+            }
+            if(isset($_GET['editEleve'])){
+              echo $_GET['editEleve'];
+              $id=$_GET['editEleve'];
+              $eleveCtrl=new EleveCtrl();
+             // $eleve=$eleveCtrl->getEleveById($id);
+              
             }
             
         ?>

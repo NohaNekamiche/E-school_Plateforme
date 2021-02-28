@@ -35,7 +35,9 @@ public function ajouterArticle($titre,$description){
             }
              article::ajouterArticle($titre,$path_file_ext,$description,$concerne);
 }}
-    
+    public function getAllArticles(){
+        return article::getAllArticles();
+    }
 
 }
 ?>

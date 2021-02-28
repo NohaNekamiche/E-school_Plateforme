@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/CSS/gestionusersstyle.css">
+
   </head>
   <body>
 
@@ -102,9 +103,19 @@
                    }
                   ?>
                     </select>
-            </div>
-
-            
+            </div> 
+          </div>
+          <div class="name-item">
+          <select name="module">
+          <?php
+          require_once "../Controler/moduleCtrl.php";
+          $modctr=new moduleCtrl();
+          $modules=$modctr->getAllModules();
+          foreach($modules as $m){
+          echo "<option value='" . $m['nomModule'] . "'>" .$m['idNiv'] . "</option>";
+        }
+          ?>
+          </select>
           </div>
        <hr/>
         
@@ -126,6 +137,7 @@
 <?php
 require_once "../Controler/receptionCtrl.php";
 require_once "../Controler/niveauCtrl.php";
+
 $recp=new receptionCtrl();
 $nivCtrl= new niveauCtrl();
 if(isset($_POST['recp'])){
@@ -134,7 +146,7 @@ $recp->insertReception($_POST['prof'],$_POST['heure'],$_POST['jour']);
 if(isset($_POST['Ajouter'])){
 $niv=$nivCtrl->getNivId($_POST['cycle'],$_POST['annee'],$_POST['grp']);
 
-
+echo $niv[0]['idNiv'];
 }
 ?>
 </body>

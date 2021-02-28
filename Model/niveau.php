@@ -18,8 +18,16 @@ class niveau{
     }
     public static function getNivId($cycle,$annee,$grp){
         model::connexion();
-        $request="SELECT idNiv FROM niveau WHERE annee='$annee' AND grp='$grp' AND cycle='$cycle'";
+        $request="SELECT * FROM niveau WHERE annee='$annee' AND grp='$grp' AND cycle='$cycle'";
         return model::request($request);
+    }
+
+    
+    public static function getAnnee($id){
+        model::connexion();
+        $request="SELECT * FROM niveau WHERE idNiv='$id'";
+        return model::request($request);
+
     }
 }
 ?>

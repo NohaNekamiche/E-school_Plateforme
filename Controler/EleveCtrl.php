@@ -16,5 +16,15 @@ class  EleveCtrl{
     public function getAllEleves(){
         return eleve::getAllEleves();
     }
+    public function getEleveById($id){
+        $result=eleve::getEleveById($id);
+
+        if(count($result)==1){
+
+        }else{
+
+        }
+        return $result;
+    }
 }
 ?>

@@ -18,8 +18,10 @@ class article{
 
     }
 
-    public function listeArticles(){
-
+    public static function getAllArticles(){
+        model::connexion();
+        $requeste="SELECT * FROM articles";
+        return model::request($requeste);
     }
 
     public function afficherArticle(){
