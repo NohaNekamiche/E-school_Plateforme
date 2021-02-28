@@ -62,6 +62,11 @@
           $vue= new articleElements();
           $vue->getArticleForm();
           $vue-> ajouterArticle();
+          if(isset($_GET['delete']))
+          {
+            $ctrl=new ArticleCtrl();
+            $ctrl->deleteById($_GET['delete']);
+          }
         ?>
 
   </body>

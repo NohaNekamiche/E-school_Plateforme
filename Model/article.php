@@ -27,5 +27,11 @@ class article{
     public function afficherArticle(){
 
     }
+    public static function deleteById($id){
+        model::connexion();
+        $requeste="DELETE FROM articles WHERE idArticle='$id'";
+        model::delete($requeste);
+
+    }
 }
 ?>

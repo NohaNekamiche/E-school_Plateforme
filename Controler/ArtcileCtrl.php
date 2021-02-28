@@ -39,5 +39,9 @@ public function ajouterArticle($titre,$description){
         return article::getAllArticles();
     }
 
+    public function deleteById($id){
+        article::deleteById($id);
+    }
+
 }
 ?>
