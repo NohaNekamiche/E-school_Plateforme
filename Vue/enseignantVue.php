@@ -54,16 +54,7 @@ class enseignantVue{
           <label for="bdate">Date de Naissance<span>*</span></label>
           <input id="bdate" type="date" name="date" required/>
           <i class="fas fa-calendar-alt"></i>
-          <div class="name-item">
-                <div>
-                    <input type="time" name="heure" placeholder="Heure de Reception" required />
-                </div>
-                <div>
-                    <input type="text" name="jour" placeholder="Jour De reception" required/>
-                </div>
-              
-        
-          </div>
+          
           <fieldset>
           <div class="btn-block">
           <button type="submit" name="Ajouter">Ajouter Enseignant</button>

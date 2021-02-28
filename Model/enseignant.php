@@ -12,5 +12,12 @@ class enseignant{
         '$idModule','$idUser','$hour','$jour')";
         return model::getIdOfInsertElement($requete);
     }
+
+    public static function getAllEnseignants(){
+        model::connexion();
+        $requete="SELECT * From enseignants";
+        $result=model::request($requete);
+        return $result;
+    }
 }
 ?>

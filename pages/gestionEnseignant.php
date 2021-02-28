@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="../public/CSS/gestionusersstyle.css">
   </head>
   <body>
+  <div class="testbox">
+      <table >
+      <caption >Liste D'énseignants</caption>
+      <thead>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>adress</th>
+      <th>Date de Naissance</th>
+      <th>N° Tel </th>
+      <th>N° Tel </th>
+      <th>N° Tel </th>
+      <th colspan="2">Action </th>
+      <?php 
+          require_once "../Controler/enseignantCtrl.php";
+          $ctrl=new enseignantCtrl();
+          $result=$ctrl-> getAllEnseignants();
+          foreach($result as $row){
+      ?>
+            <tr>
+            <th scope="row"> <?php  echo $row['id'];?></th>
+            <td> <?php  echo $row['nom'];?></td>
+            <td> <?php  echo $row['prenom'];?></td>
+            <td> <?php  echo $row['adress'];?></td>
+            <td> <?php  echo $row['dateNais'];?></td>
+            <td> <?php  echo $row['numTel1'];?></td>
+            <td> <?php  echo $row['numTel2'];?></td>
+            <td> <?php  echo $row['numTel3'];?></td>
+            <td> <a href="gestionEnseignant.php?edit=<?php echo $row['id']?>"
+              ><button class="btn-block">Modifier</button></a>
+            
+            </td>
+            <td>
+            <a href="gestionEnseignant.php?delete=<?php echo $row['id']?>"
+              ><button class="btn-block">Supprimer</button></a>
+            </td>
+            </td>
+            </tr>
+      <?php }?>
+     </thead>
+
+    </table>
+</div>
       <?php
       require_once "../Vue/enseignantVue.php";
        $vue= new enseignantVue();

@@ -11,5 +11,9 @@ class enseignantCtrl{
 
         enseignant::addEnseignant($email,$nom,$prenom,$dateNais,$adress,$idModule,$numTel1,$numTel2,$numTel3,$hour,$jour);
     }
+
+    public function  getAllEnseignants(){
+       return enseignant:: getAllEnseignants();
+    }
 }
 ?>
