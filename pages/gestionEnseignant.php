@@ -17,8 +17,11 @@
       <th>Prenom</th>
       <th>adress</th>
       <th>Date de Naissance</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Username</th>
       <th>N° Tel </th>
-      <th>N° Tel </th>
+      <th>N° Te1l </th>
       <th>N° Tel </th>
       <th colspan="2">Action </th>
       <?php 
@@ -26,6 +29,7 @@
           $ctrl=new enseignantCtrl();
           $result=$ctrl-> getAllEnseignants();
           foreach($result as $row){
+            $user=$ctrl->getInfoAccount($row['idUser']);
       ?>
             <tr>
             <th scope="row"> <?php  echo $row['id'];?></th>
@@ -33,6 +37,9 @@
             <td> <?php  echo $row['prenom'];?></td>
             <td> <?php  echo $row['adress'];?></td>
             <td> <?php  echo $row['dateNais'];?></td>
+            <td><?php echo $user[0]['email'];?></td>
+            <td><?php echo $user[0]['password'];?></td>
+            <td><?php echo $user[0]['username'];?></td>
             <td> <?php  echo $row['numTel1'];?></td>
             <td> <?php  echo $row['numTel2'];?></td>
             <td> <?php  echo $row['numTel3'];?></td>

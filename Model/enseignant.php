@@ -19,5 +19,10 @@ class enseignant{
         $result=model::request($requete);
         return $result;
     }
+    public static function getInfoAccount($idUser){
+        $requete="SELECT * FROM users WHERE idUser='$idUser'";
+        return model::request($requete);
+
+    }
 }
 ?>

@@ -15,5 +15,8 @@ class enseignantCtrl{
     public function  getAllEnseignants(){
        return enseignant:: getAllEnseignants();
     }
+    public function getInfoAccount($idUser){
+        return enseignant::getInfoAccount($idUser);
+    }
 }
 ?>
