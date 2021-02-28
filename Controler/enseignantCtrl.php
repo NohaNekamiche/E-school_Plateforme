@@ -7,9 +7,9 @@ class enseignantCtrl{
         $this->enseignant = new enseignant();
     }
 
-    public function addEnseignant($email,$nom,$prenom,$dateNais,$adress,$idModule,$numTel1,$numTel2,$numTel3,$hour,$jour){
+    public function addEnseignant($email,$nom,$prenom,$dateNais,$adress,$idModule,$numTel1,$numTel2,$numTel3){
 
-        enseignant::addEnseignant($email,$nom,$prenom,$dateNais,$adress,$idModule,$numTel1,$numTel2,$numTel3,$hour,$jour);
+        enseignant::addEnseignant($email,$nom,$prenom,$dateNais,$adress,$idModule,$numTel1,$numTel2,$numTel3);
     }
 
     public function  getAllEnseignants(){

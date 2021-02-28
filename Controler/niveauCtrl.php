@@ -7,6 +7,10 @@ class niveauCtrl{
         $this->niveau= new niveau();
     }
 
+    public function getAllNiveau(){
+        return niveau::getAllNiveau();
+    }
+
 
     public function getNiveauById($id){
        return niveau::getNiveauById($id);

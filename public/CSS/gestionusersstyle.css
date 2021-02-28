@@ -1,7 +1,7 @@
 html, body {
     min-height: 90%;
     }
-    body, div, form, input, label { 
+    body, div, form, input, label ,select{ 
     padding: 0;
     margin: 0;
     outline: none;

@@ -110,7 +110,7 @@
                     <li><a href="#">Empoils Du Temps Secondaire</a></li>
                   </ul>
                 </li>
-                <li><a href="">Gestion des Enseignants</a></li>
+                <li><a href="../pages/gestionWorkEnseignant.php">Gestion des Enseignants</a></li>
                 <li>
                   <span class="opener">Gestion des utilisateurs</span>
                   <ul>
