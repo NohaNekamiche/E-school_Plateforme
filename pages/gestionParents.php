@@ -63,6 +63,9 @@ session_start();
       <th>Nom</th>
       <th>Prenom</th>
       <th>Date de Naissance</th>
+      <th>Annee</th>
+      <th>Groupe</th>
+      <th>Cycle</th>
       <th>N° Tel </th>
       <th>N° Tel </th>
       <th>N° Tel </th>
@@ -70,15 +73,22 @@ session_start();
      </thead>
      <?php 
           require_once "../Controler/EleveCtrl.php";
+          require_once "../Controler/niveauCtrl.php";
           $ctrl=new EleveCtrl();
+          $nivCtrl=new niveauCtrl();
           $result1=$ctrl->getAllEleves();
           foreach($result1 as $eleve){
+            $niv= $nivCtrl->getNiveauById($eleve['idNiv']);
+          
       ?>
             <tr>
             <th scope="row"> <?php  echo $eleve['id'];?></th>
             <td> <?php  echo $eleve['nom'];?></td>
             <td> <?php  echo $eleve['prenom'];?></td>
             <td> <?php  echo $eleve['dateNais'];?></td>
+            <td><?php  echo $niv[0]['annee'] ?></td>
+            <td><?php  echo $niv[0]['grp'] ?></td>
+            <td><?php  echo $niv[0]['cycle'] ?></td>
             <td> <?php  echo $eleve['NumTel1'];?></td>
             <td> <?php  echo $eleve['NumTel2'];?></td>
             <td> <?php  echo $eleve['NumTel3'];?></td>
