@@ -13,6 +13,9 @@ class diaporamaCtrl{
          return $result;
     }
 
+    public function getAllSlides(){
+        return diaporama::getAllSlides();
+    }
     public function ajouterImg(){
         if (($_FILES['img']['name']!="")){
             $directory="../school/slides/";
@@ -32,5 +35,11 @@ class diaporamaCtrl{
        //     move_uploaded_file($imgUrl,$directory);
             diaporama::ajouterImg($path_file_ext);
     }
-}}
+}
+    public function deleteById($id){
+        diaporama::deleteById($id);
+    }
+
+
+}
 ?>

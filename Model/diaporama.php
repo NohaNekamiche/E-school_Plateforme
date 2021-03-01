@@ -16,7 +16,17 @@ class diaporama{
         VALUES ('$img')";
         model::addRequest($requeste);
     }
+    public static function getAllSlides(){
+        model::connexion();
+        $requeste="SELECT * FROM diaporama";
+        return model::request($requeste);
+    }
 
+    public static function deleteById($id){
+        model::connexion();
+        $requeste="DELETE FROM diaporama WHERE id='$id'";
+        model::delete($requeste);
+    }
 }
 
 

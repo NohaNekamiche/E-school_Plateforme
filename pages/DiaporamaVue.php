@@ -18,26 +18,51 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
      <link rel="stylesheet" href="../public/CSS/stylevues.css">
+        <!-- Bootstrap core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>        
-        <div class="main-block">
-            <form method="post" enctype="multipart/form-data" >
-              <h1>Ajouter Image dans Diaporama</h1>
-                <label class="file">
-                <input type="file" id="file" name="img">
+  <div class="table-responsive-md">
+    <h1 class="text-center"> Liste des Articles Publie</h1>
+      <table  class="table  table-striped table-bordered .table-responsive">
+  
+      <thead>
+      <th>Id</th>
+      <th>Image</th>
+      <th colspan="2">Action </th>
+      <?php 
+          require_once "../Controler/diaporamaCtrl.php";
+          $ctrl=new diaporamaCtrl();
+          $result=$ctrl->getAllSlides();
+          foreach($result as $row){
+         //   $user=$ctrl->getInfoAccount($row['id']);
+      ?>
+            <tr>
+            <th scope="row"> <?php  echo $row['id'];?></th>
+            <td> <img  src=" <?= $row['imgUrl'];?>" width="30%" height="250px"></td>
 
-              </label>
-              <button type="submit"  name="Ajouter">Ajouter Image</button>
-            </form>   
-          </div>
+            <td> <a href="DiaporamaVue.php?edit=<?php echo $row['id']?>"
+              ><button class="btn-block">Modifier</button></a>
+            
+            </td>
+            <td>
+            <a href="DiaporamaVue.php?delete=<?php echo $row['id']?>"
+              ><button class="btn-block">Supprimer</button></a>
+            </td>
+            </td>
+            </tr>
+      <?php }?>
+     </thead>
+
+    </table>
+</div>
           <?php
+          require_once '../Vue/diaporamaElements.php';
           require_once '../Controler/diaporamaCtrl.php';
-            if(isset($_POST["Ajouter"])){
-              
-              $ctrl= new diaporamaCtrl();
-
-                $ctrl->ajouterImg();
-            }
+          $vue=new diaporamaElements();
+          $vue->getForm();
+          $vue->ajouter();
+          $vue->delete();
         ?>
 
   </body>

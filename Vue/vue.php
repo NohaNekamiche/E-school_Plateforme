@@ -31,9 +31,9 @@
       //$requete = "SELECT imgUrl FROM diaporama ORDER BY id ASC ";
       //$result=model::request($requete);
       $result=$diaporama->getSlides();
-      $diaporama-> getDiaporama($result);
+     // $diaporama->getDiaporama($result);
       ?>
-      <h1>request </h1>
+      <h1>Diaporama </h1>
       <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
