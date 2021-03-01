@@ -80,6 +80,61 @@ class AccuielEcoleElements{
         return $this->controller->getDiaporama();
     }
 
+    public function getMenu(){
+        echo '
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            
+            <a href="#" class="navbar-brand">
+                <img src="../school/logo/logoBleu.png" height="80" alt="ESchool">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+          <button class="dropbtn">Accueil <span class="sr-only">(current)</span></button>
+          </li>
+          <li class="nav-item ">
+              
+          <button class="dropbtn">Presentation de l"ecole</button>
+          </li>
+          <li class="nav-item dropdown">
+          
+            <button class="dropbtn">Cycles d’enseignement </button>
+                <div class="dropdown-content">
+                <a href="#">Primaire</a>
+                <a href="#">Moyen</a>
+                <a href="#">Secondaire</a>
+                </div>
+          </li>
+          <li class="nav-item">
+          <button class="dropbtn">Espace Eleves</a></button>
+          </li>
+          <li class="nav-item">
+          <button class="dropbtn">Espace Parents d"Eleve</button>
+          </li>
+          <li class="nav-item">
+          <button class="dropbtn">Contact</button>
+          </div>
+         
+         
+        </ul>
+        <ul class="navbar-right">
+        <div id="topbar">
+                      <div class="container ">
+                        <div class="social-links">
+                          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                      </div>
+                  </div>
+    </ul>
+      </div>
+        </nav>';
+    }
 }
 
 ?>
