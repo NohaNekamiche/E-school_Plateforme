@@ -16,41 +16,13 @@
     <link rel="stylesheet" href="../public/CSS/stylevues.css">
   </head>
   <body>
-  
-          
-        <div class="main-block">
-            <form method="post" enctype="multipart/form-data">
-              <h1>Ajouter Repas</h1>
-              <div class="info">
-                <input class="fname" type="text" name="nom" placeholder="Nom Repas">
-                <label for="jours">Choose le jour:</label>
-                <select id="selectype" name="jours" required>
-                    <option value="Dimanche">Dimanche</option>
-                    <option value="Lundi">Lundi</option>
-                    <option value="Mardi">Mardi</option>
-                    <option value="Mercredi">Mercredi</option>
-                    <option value="Jeudi">Jeudi</option>
-                </select>
-                <label class="file">
-                <input type="file" id="file" aria-label="File browser example" name="img">
-                <span class="file-custom"></span>
-              </label>
-              </div>
-              <p>Description</p>
-              <div>
-                <textarea rows="4" name="description"></textarea>
-              </div>
-              <button type="submit"  name="Ajouter">Ajouter Article</button>
-            </form>
-                
-          </div>
+
           <?php
           require_once '../Controler/RepasCtrl.php';
-            if(isset($_POST["Ajouter"])){
-              
-              $ctrl= new RepasCtrl();
-                $ctrl->ajouterRepas($_POST['nom'],$_POST['description'],$_POST['jours']);
-            }
+          require_once '../Vue/repasVue.php';
+          $vue=new repasVue();
+          $vue->getForm();
+          $vue->AddUpdateRepas();
         ?>
 
   </body>
