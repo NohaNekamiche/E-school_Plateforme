@@ -33,7 +33,7 @@ class repasVue{
           <div>
             <textarea rows="4" name="description"></textarea>
           </div>
-          <button type="submit"  name="Ajouter">Ajouter Article</button>
+          <button type="submit"  name="Ajouter">Sauvegarder</button>
         </form>
             
       </div>';

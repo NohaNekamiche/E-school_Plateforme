@@ -26,6 +26,9 @@ class RepasCtrl{
                 repas::ajouterRepas($nom,$path_file_ext,$description,$jour);
         }
     }
+    public function getAllRepas(){
+        return repas::getAllRepas();
+    }
     
 }
 

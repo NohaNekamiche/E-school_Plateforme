@@ -17,6 +17,41 @@
   </head>
   <body>
 
+  <div class="table-responsive-md">
+    <h1 class="text-center"> Liste des Articles Publie</h1>
+      <table  class="table  table-striped table-bordered .table-responsive">
+  
+      <thead>
+      <th>Id</th>
+      <th>Nom Repas</th>
+      <th>Description </th>
+      <th>Image</th>
+      <th>Jour</th>
+      <th >Action </th>
+      <?php 
+          require_once "../Controler/repasCtrl.php";
+          $ctrl=new repasCtrl();
+          $result=$ctrl->getAllRepas();
+          foreach($result as $row){
+         //   $user=$ctrl->getInfoAccount($row['id']);
+      ?>
+            <tr>
+            <th scope="row"> <?php  echo $row['idRepas'];?></th>
+            <th > <?php  echo $row['nom'];?></th>
+            <th > <?php  echo $row['description'];?></th>
+            <td> <img  src=" <?= $row['imgUrl'];?>" width="50px" height="350px"></td>
+            <th > <?php  echo $row['jour'];?></th>
+            <td>
+            <a href="RestaurationVue.php?delete=<?php echo $row['idRepas']?>"
+              ><button class="btn-block">Supprimer</button></a>
+            </td>
+            </td>
+            </tr>
+      <?php }?>
+     </thead>
+
+    </table>
+</div>
           <?php
           require_once '../Controler/RepasCtrl.php';
           require_once '../Vue/repasVue.php';

@@ -19,6 +19,12 @@ class repas{
 
     }
 
+    public static function getAllRepas(){
+        model::connexion();
+        $request="SELECT * FROM repas";
+        return model::request($request);
+    }
+
 
 }
 ?>
