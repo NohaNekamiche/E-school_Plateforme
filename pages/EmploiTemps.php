@@ -13,28 +13,15 @@
   
   <div class="testbox">
           <div>
-          <table>
-          <caption >Liste D'énseignants</caption>
-        <thead>
-        <th>Dimanche</th>
-        <th>Lundi</th>
-        <th>Mardi</th>
-        <th>Mercredi</th>
-        <th>Jeudi</th>
-</thead>
+      
 <?php
-require_once "../Controler/seanceCtrl.php";
-$sctrl1=new seanceCtrl();
-$day="Dimache";
-$idNiv=1;
-$get=$sctrl1->getSeanceByDate('Dimanche',$idNiv);
-foreach($get as $seance){
-        $idMod=$seance['idModule'];
-        echo '<tr><td>Math <br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td></tr>';
-}
+require_once "../Vue/EmploiTempsVue.php";
+$tableVue=new EmploiTempsVue();
+$tableVue->getTable(1);
+$tableVue->getTable(3);
 ?>  
 
-</table>
+
 </div>
       <form method="post">
         <div class="banner">
