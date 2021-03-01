@@ -4,7 +4,7 @@ class modules{
     public static function getAllModules(){
         model::connexion();
         $request="SELECT * FROM modules";
-        model::request($request);
+        return model::request($request);
     }
 }
 ?>
