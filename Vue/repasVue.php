@@ -44,5 +44,11 @@ class repasVue{
               $this->controller->ajouterRepas($_POST['nom'],$_POST['description'],$_POST['jours']);
           }
     }
+    public function delete(){
+        if(isset($_GET['delete']))
+        {
+          $this->controller->deleteById($_GET['delete']);
+        }
+      }
 }
 ?>

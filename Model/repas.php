@@ -24,6 +24,11 @@ class repas{
         $request="SELECT * FROM repas";
         return model::request($request);
     }
+    public static function deleteById($id){
+        model::connexion();
+        $request="DELETE FROM repas WHERE idRepas='$id'";
+        model::delete($request);
+    }
 
 
 }

@@ -58,6 +58,7 @@
           $vue=new repasVue();
           $vue->getForm();
           $vue->AddUpdateRepas();
+          $vue->delete();
         ?>
 
   </body>

@@ -29,7 +29,9 @@ class RepasCtrl{
     public function getAllRepas(){
         return repas::getAllRepas();
     }
-    
+    public function deleteById($id){
+        repas::deleteById($id);
+    }
 }
 
 
