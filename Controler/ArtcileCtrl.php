@@ -38,9 +38,15 @@ public function ajouterArticle($titre,$description){
     public function getAllArticles(){
         return article::getAllArticles();
     }
+    public function getArticleById($id){
+        return article::getArticleById($id);
+    }
 
     public function deleteById($id){
         article::deleteById($id);
+    }
+    public static function getIdLastArticle(){
+        return article::getIdLastArticle();
     }
 
 }

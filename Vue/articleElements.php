@@ -97,5 +97,39 @@ class articleElements{
       }
        
     }
+
+     function getDebutArticle(){
+      echo '
+      <div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+    <div class="row">
+      <div class="col-12 mt-3 mb-1">
+        <h4 class="text-uppercase">Articles</h4>
+        <p>Dans cette section on vous presente les dernier articles publie dans l"ecole </p>
+      </div>
+    </div>';
+    }
+    function getArticle(){
+      $this->controller->getIdLastArticle();
+      echo ' <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex"><div class="media-body text-center">
+              <h3>278</h3>
+              <span>New Posts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>'.'
+  </section>
+  
+ 
+  </div>'
+              ;
+    }
 }}
 ?>

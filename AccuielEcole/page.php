@@ -27,9 +27,9 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="align-self-center">
-                  <i class="icon-pencil primary font-large-2 float-left"></i>
+                 
                 </div>
-                <div class="media-body text-right">
+                <div class="media-body text-center">
                   <h3>278</h3>
                   <span>New Posts</span>
                 </div>
@@ -44,7 +44,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="align-self-center">
-                  <i class="icon-speech warning font-large-2 float-left"></i>
+                 
                 </div>
                 <div class="media-body text-right">
                   <h3>156</h3>
@@ -61,7 +61,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="align-self-center">
-                  <i class="icon-graph success font-large-2 float-left"></i>
+                 
                 </div>
                 <div class="media-body text-right">
                   <h3>64.89 %</h3>
@@ -78,7 +78,7 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="align-self-center">
-                  <i class="icon-pointer danger font-large-2 float-left"></i>
+                  
                 </div>
                 <div class="media-body text-right">
                   <h3>423</h3>
@@ -102,7 +102,7 @@
                   <span>New Projects</span>
                 </div>
                 <div class="align-self-center">
-                  <i class="icon-rocket danger font-large-2 float-right"></i>
+                  
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@
                   <span>New Clients</span>
                 </div>
                 <div class="align-self-center">
-                  <i class="icon-user success font-large-2 float-right"></i>
+                 
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@
                   <span>Conversion Rate</span>
                 </div>
                 <div class="align-self-center">
-                  <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                 
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
                   <span>Support Tickets</span>
                 </div>
                 <div class="align-self-center">
-                  <i class="icon-support primary font-large-2 float-right"></i>
+                
                 </div>
               </div>
             </div>

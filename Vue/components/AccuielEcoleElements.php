@@ -1,6 +1,7 @@
 <?php 
 
 require_once "../Controler/diaporamaCtrl.php";
+require_once "../Controler/ArtcileCtrl.php";
 class AccuielEcoleElements{
     private $controller;
 
@@ -135,6 +136,81 @@ class AccuielEcoleElements{
       </div>
         </nav>';
     }
+    public function getDebutArticle(){
+        echo '
+        <div class="grey-bg container-fluid">
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+          <h4 class="text-uppercase">Articles</h4>
+          <p>Dans cette section on vous presente les dernier articles publie dans l"ecole </p>
+        </div>
+      </div>';
+      }
+     public  function getArticle(){
+        $id=ArticleCtrl::getIdLastArticle();
+        $ctrl=new ArticleCtrl();
+       
+        $cpt=$id['max_id'];
+        $i=0;
+        echo '   <div class="row">';
+        while($i<4){
+                        $article= $ctrl->getArticleById(($cpt-$i));
+            $i++;
+
+        echo'
+        <div class="col-xl-3 col-sm-6 col-12"> 
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-center">
+                    <h3>'.$article[0]['titre'].'</h3>
+                    <span>New Posts</span>4';
+                    echo " <img src=" . $article[0]['imageUrl']  . " width='50px' height='250px' >";
+                    echo '
+                    <p>'.$article[0]['descrption'].'</p><div class="btn-block">
+                    <button type="submit" name="Ajouter">Plus</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></div>';
+        }
+        $cpt=$cpt-$i;
+        $i=0;
+        while($i<4){
+
+                        $article= $ctrl->getArticleById(($cpt-$i));
+            $i++;
+            if(count($article)){
+            echo'
+            <div class="col-xl-3 col-sm-6 col-12"> 
+            <div class="card">
+            <div class="card-content">
+            <div class="card-body">
+                <div class="media d-flex">
+                <div class="media-body text-center">
+                    <h3>'.$article[0]['titre'].'</h3>
+                    ';
+                    echo " <img src=" . $article[0]['imageUrl']  . " width='50px' height='250px' >";
+                    echo ' 
+                    <p>'.$article[0]['descrption'].'</p><div class="btn-block">
+                    <button type="submit" name="Ajouter">Plus</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div></div>';
+          }  }
+         echo '   
+         
+    </section> 
+    
+    </div>'  ;
+      }
 }
 
 ?>

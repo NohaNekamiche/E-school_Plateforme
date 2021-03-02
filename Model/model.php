@@ -53,8 +53,9 @@ class model{
     }
 
     public static function getField($requeste){
-        self::$conn->prepare($requeste);
-        $field=self::$conn->exec($requeste);
+        $stmt=self::$conn->prepare($requeste);
+        $stmt -> execute();
+        $field = $stmt -> fetch(PDO::FETCH_ASSOC);
         return $field;
     }
 }

@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--- extra links-->
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
     </head>
     <body>
         
 <div class="container">
 <?php
       require_once ("../Vue/components/AccuielEcoleElements.php");
-
       $vue=new AccuielEcoleElements();
       //$db =model::connexion();
       //$requete = "SELECT imgUrl FROM diaporama ORDER BY id ASC ";
@@ -76,6 +77,15 @@
 
     <?php
      $vue->getMenu();
+    $vue->getDebutArticle();
+     $vue->getArticle();
     ?>
+
+
+
+
+  
+  
+
     </body>
 </html>

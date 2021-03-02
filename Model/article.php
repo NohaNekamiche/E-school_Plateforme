@@ -33,5 +33,16 @@ class article{
         model::delete($requeste);
 
     }
+    public static function getArticleById($id){
+        model::connexion();
+        $requeste="SELECT * FROM articles WHERE idArticle='$id'";
+        return model::request($requeste);
+    }
+
+    public static function getIdLastArticle(){
+        model::connexion();
+        $requeste="SELECT MAX(idArticle) AS max_id  FROM articles";
+        return  model::getField($requeste);
+    }
 }
 ?>
