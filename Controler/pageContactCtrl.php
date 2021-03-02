@@ -13,5 +13,9 @@ class pageContactCtrl{
     public function getInfoPage(){
         return contact::getInfoPage();
     }
+
+    public function deletById($id){
+        contact::deletById($id);
+    }
 }
 ?>

@@ -15,5 +15,11 @@ class contact{
         $requete="SELECT * FROM pagecontact";
         return model::getField($requete);
     }
+
+    public static function deletById($id){
+        model::connexion();
+        $requete="DELETE FROM pagecontact WHERE id='$id'";
+        model::delete($requete);
+    }
 }
 ?>

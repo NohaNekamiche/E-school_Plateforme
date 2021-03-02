@@ -76,10 +76,29 @@ class contactElements{
                <td>'.$result['numTel1'].'</td>
                <td>'.$result['numTel2'].'</td>
                <td>'.$result['fax'].'</td>
+               <td> <a href="ContactVue.php?edit='.$result['id'].'"
+               ><button class="btn-block">Modifier</button></a>
+             </td>
+             <td> <a href="ContactVue.php?delete='.$result['id'].'"
+               ><button class="btn-block">Supprimer</button></a>
+             
+             </td>
                </tr></thead></table>'; 
+               if(isset($_GET['delete']))
+               {
+                   $id=$_GET['delete'];
+                   echo $id;
+                   $this->controller->deletById($id);
+                 
+               }
+               if(isset($_GET['edit'])){
+                 echo $_GET['edit'];
+                 $id=$_GET['edit'];
+               }
         }else{
          echo ' </thead></table>';
         };
+        
      }
 
      public function ajouterInfo(){
