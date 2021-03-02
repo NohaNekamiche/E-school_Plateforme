@@ -15,6 +15,11 @@ class seance{
         $request="SELECT * FROM seances WHERE jour='$jour'  AND idNiv='$idNiv'";
         return model::request($request);
     }
+    public static function getAllSeances(){
+        $request="SELECT * FROM seances";
+        model::connexion();
+        return model::request($request);
+    }
 
 }
 

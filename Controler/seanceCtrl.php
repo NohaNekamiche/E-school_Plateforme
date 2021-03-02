@@ -17,7 +17,9 @@ class seanceCtrl{
     public function getSeanceByDate($jour,$idNiv){
        return seance::getSeanceByDate($jour,$idNiv);
     }
-    public function get(){}
+    public function getAllSeances(){
+        return seance::getAllSeances();
+    }
     
 }
 ?>

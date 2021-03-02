@@ -45,5 +45,10 @@ class EmploiTempsVue{
         }
         echo '</table>        </fieldset><hr/> ';
     }
+
+
+    public function getAllSeances(){
+        return $this->controller->getAllSeances();
+    }
 }
 ?>

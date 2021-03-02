@@ -16,9 +16,16 @@
       
 <?php
 require_once "../Vue/EmploiTempsVue.php";
+require_once "../Controler/niveauCtrl.php";
+$level=new niveauCtrl();
+$response=$level->getAllNiveau();
 $tableVue=new EmploiTempsVue();
-$tableVue->getTable(1);
-$tableVue->getTable(3);
+//$response=$tableVue->getAllSeances();
+foreach($response as $rep){
+        $tableVue->getTable($rep['idNiv']);
+    }
+
+
 ?>  
 
 
