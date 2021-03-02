@@ -23,7 +23,7 @@
   </head>
   <body>        
   <div class="table-responsive-md">
-    <h1 class="text-center"> Liste des Articles Publie</h1>
+    <h1 class="text-center"> Liste des Slides </h1>
       <table  class="table  table-striped table-bordered .table-responsive">
   
       <thead>

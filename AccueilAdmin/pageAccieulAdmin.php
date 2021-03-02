@@ -33,37 +33,37 @@
                   <div class="col-md-4">
                     <div class="service-item first-item">
                       <div class="icon"></div>
-                      <h4>Gestion des <br/> Articles</h4>
+                      <h4><a href="../pages/ArticleVue.php">Gestion des <br/> Articles</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="service-item second-item">
                       <div class="icon"></div>
-                      <h4>Gestion des Présentations</h4>
+                      <h4><a href="../pages/CreerPresentationVue.php">Gestion des Présentations</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="service-item third-item">
                       <div class="icon"></div>
-                      <h4>Gestion des Emplois du Temps</h4>
+                      <h4><a href="../pages/EmploiTemps.php">Gestion des Emplois du Temps</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="service-item fourth-item">
                       <div class="icon"></div>
-                      <h4>Gestion des Enseignants</h4>
+                      <h4><a href="../pages/gestionWorkEnseignant.php">Gestion des Enseignants</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="service-item fivth-item">
                       <div class="icon"></div>
-                      <h4>Gestion des utilisateurs</h4>
+                      <h4><a href="../pages/gestionParents.php">Gestion des utilisateurs</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="service-item sixth-item">
                       <div class="icon"></div>
-                      <h4>Gestion de Restauration</h4>
+                      <h4><a href="../pages/RestaurationVue.php">Gestion de Restauration</a></h4>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -75,7 +75,7 @@
                   <div class="col-md-4">
                     <div class="service-item eighth-item ">
                       <div class="icon"></div>
-                      <h4>Gestion de Diaporama et Design</h4>      
+                      <h4><a href="../pages/DiaporamaVue.php">Gestion de Diaporama et Design</a></h4>      
                     </div>
                   </div>
                 </div>
