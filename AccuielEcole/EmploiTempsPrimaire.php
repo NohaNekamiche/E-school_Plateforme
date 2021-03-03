@@ -10,10 +10,5 @@
     <link rel="stylesheet" href="../public/CSS/gestionusersstyle.css">
     </head>
   <body>
-<?php
-require_once "../Vue/EmploiTempsCycleVue.php";
-$vue=new EmploiTempsCycleVue();
-$vue->getTableReception('P','Liste de Reception pour les profs de Primaire');
-?>
   </body>
   </html>

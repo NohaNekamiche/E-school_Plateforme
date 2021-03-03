@@ -13,7 +13,7 @@
 <?php
 require_once "../Vue/EmploiTempsCycleVue.php";
 $vue=new EmploiTempsCycleVue();
-$vue->getTableReception('P','Liste de Reception pour les profs de Primaire');
+$vue->getTableReception('M','Liste de Reception pour les profs de Moyen');
 ?>
   </body>
   </html>

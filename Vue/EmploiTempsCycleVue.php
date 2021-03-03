@@ -10,12 +10,12 @@ class EmploiTempsCycleVue{
         $this->controller = new receptionCtrl();
     }
 
-    public function getTableReception($cycle){
+    public function getTableReception($cycle,$legend){
         $ensCtrl=new enseignantCtrl();
         $nivCtrl=new niveauCtrl();
         $niveaux=$nivCtrl->getNivByCycle($cycle);
         $moduleCtrl=new moduleCtrl();
-        echo '     <div class="testbox">  <fieldset><legend>Liste de Reception pour les profs de Primaire</legend>
+        echo '     <div class="testbox">  <fieldset><legend>'.$legend.'</legend>
         <table>
 
         <tr>
