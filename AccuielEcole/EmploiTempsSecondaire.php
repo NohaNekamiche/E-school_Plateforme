@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="../public/CSS/gestionusersstyle.css">
     </head>
   <body>
+  </body>
   <?php
   require_once "../Vue/EmploiTempsVue.php";
   require_once "../Controler/niveauCtrl.php";
   $vue=new EmploiTempsVue();
   $nivCtrl=new niveauCtrl();
-  $niveaux=$nivCtrl-> getNivByCycle('P');
+  $niveaux=$nivCtrl-> getNivByCycle('S');
   foreach($niveaux as $niv){
     $vue->getTable($niv['idNiv']);
   }
 
   ?>
-  </body>
   </html>
