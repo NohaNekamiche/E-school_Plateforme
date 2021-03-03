@@ -2,6 +2,7 @@
 
 require_once "../Controler/diaporamaCtrl.php";
 require_once "../Controler/ArtcileCtrl.php";
+require_once "../Controler/RepasCtrl.php";
 class AccuielEcoleElements{
     private $controller;
 
@@ -210,6 +211,49 @@ class AccuielEcoleElements{
     </section> 
     
     </div>'  ;
+      }
+
+
+      public function getRestarationInfo(){
+        $repasCtrl=new RepasCtrl();
+        $repas=$repasCtrl->getAllRepas();
+        $i=0;
+        echo '   <div class="row">';
+        foreach($repas as $r){
+          if($i<4){
+            $i++;
+            echo'
+            <div class="col-xl-3 col-sm-6 col-12"> 
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <div class="media d-flex">
+                      <div class="media-body text-center">
+                        <h3>'.$r['nom'].'</h3>';
+                        echo " <img src=" . $r['imgUrl']  . " width='50px' height='250px' >";
+                        echo '
+                        <h3> Repas de :'.$r['jour'].' </h3>
+                        <p>'.$r['description'].'</p><div class="btn-block">
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div></div>';
+            
+
+          }
+          $i=0;
+        }
+      }
+
+      public function getTitleRestauration(){
+        echo '    
+        <div class="text-center">
+          <h1 >Plan de Restauration </h1>
+          <p>Repas de chaque semaines pour les trois cycles.</p></div<
+        ';
       }
 }
 
