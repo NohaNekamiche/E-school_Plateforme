@@ -29,5 +29,10 @@ class niveau{
         return model::request($request);
 
     }
+    public static function getNivByCycle($cycle){
+        model::connexion();
+        $request="SELECT * FROM niveau WHERE cycle='$cycle'";
+        return model::request($request);
+    }
 }
 ?>

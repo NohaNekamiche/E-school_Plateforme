@@ -18,5 +18,9 @@ class enseignantCtrl{
     public function getInfoAccount($idUser){
         return enseignant::getInfoAccount($idUser);
     }
+
+    public function getprofByIdMod($id){
+        return enseignant::getprofByIdMod($id);
+    }
 }
 ?>

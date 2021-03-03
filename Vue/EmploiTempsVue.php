@@ -50,5 +50,10 @@ class EmploiTempsVue{
     public function getAllSeances(){
         return $this->controller->getAllSeances();
     }
+
+
+    public function getTableEmploiTemps($cycle){
+            
+    }
 }
 ?>

@@ -22,7 +22,12 @@ class enseignant{
     public static function getInfoAccount($idUser){
         $requete="SELECT * FROM users WHERE idUser='$idUser'";
         return model::request($requete);
+    }
 
+    public static function  getprofByIdMod($id){
+        model::connexion();
+        $requete="SELECT * From enseignants WHERE idModule='$id'";
+        return model::request($requete);
     }
 }
 ?>

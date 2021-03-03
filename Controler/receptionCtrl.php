@@ -8,6 +8,8 @@ class receptionCtrl{
     public function insertReception($idEnseignant,$heure,$jour){
         reception::insertReception($idEnseignant,$heure,$jour);
     }
-
+    public function getReceptionByidprofJour($idEnseignant,$jour){
+        return reception::getReceptionByidprofJour($idEnseignant,$jour);
+    }
 }
 ?>

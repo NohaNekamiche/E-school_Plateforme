@@ -18,5 +18,8 @@ class niveauCtrl{
     public function getNivId($cycle,$annee,$grp){
         return niveau::getNivId($cycle,$annee,$grp);
     }
+    public function getNivByCycle($cycle){
+        return niveau::getNivByCycle($cycle);
+    }
 }
 ?>

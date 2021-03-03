@@ -9,5 +9,9 @@ class moduleCtrl{
         return modules::getAllModules();
     }
 
+    public function getModuleByIdNiv($idNiv){
+        return modules::getModuleByIdNiv($idNiv);
+    }
+
 }
 ?>
