@@ -38,5 +38,10 @@ class parents{
             model::delete($requete);
             model::delete($requeste);
     }
+    public static function getParentById($id){
+        model::connexion();
+        $requeste="SELECT * FROM parents WHERE id='$id'";
+        return model::getField($requeste);
+    }
 }
 ?>

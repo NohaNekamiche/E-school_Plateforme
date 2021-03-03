@@ -1,6 +1,8 @@
 <?php
 require_once "../Controler/EleveCtrl.php";
 require_once "../Controler/userCtrl.php";
+require_once "../Controler/parentCtrl.php";
+require_once "../Controler/niveauCtrl.php";
 class infopageVue{
     private $controller;
     private $user;
@@ -38,8 +40,12 @@ class infopageVue{
     }
 
     public function getInfoEleve(){
+        $parentCtrl=new parentCtrl();
+        $parent=$parentCtrl->getParentById($this->eleve[0]['idParent']);
+        $nivCtrl=new niveauCtrl();
+        $niv=$nivCtrl->getNiveauById($this->eleve[0]['idNiv']);
         echo '  <hr/>
-        <fieldset><legend>Information de Votre Compte </legend>
+        <fieldset><legend>Votre Information </legend>
         <div class="item">
             <div class="name-item">
               <div>
@@ -70,7 +76,25 @@ class infopageVue{
               <label>N° Tel 3</label>
                   <input onclick="enable_disable()" type="text" name="address" value="'.$this->eleve[0]['NumTel3'].'" disabled required />
               </div>
-        </div></div><fieldset>
+        </div>
+        <div class="name-item">
+        <div>
+        <label>Votre Parent Tuteur</label>
+            <input onclick="enable_disable()" type="text" name="address" value="'.$parent['nom'].'  '.$parent['prenom'].'" disabled required />
+        </div>
+        <div>
+        <label>Votre Cycle</label>
+        <input onclick="enable_disable()" type="text" name="address" value="'.$niv[0]['cycle'].'" disabled required />
+        </div>
+        <div>
+        <label>Votre Annee courants</label>
+        <input onclick="enable_disable()" type="text" name="address" value=" '.$niv[0]['annee'].'" disabled required />
+    </div>
+    <div>
+    <label>Votre Groupe</label>
+    <input onclick="enable_disable()" type="text" name="address" value="'.$niv[0]['grp'].'" disabled required />
+    </div>
+        </div><fieldset>
           <div class="btn-block">
           <button type="submit" name="Ajouter">Modifier Info</button>
           </div>
