@@ -2,7 +2,14 @@
 require_once "../Controler/pageContactCtrl.php";
 class contactElements{
     private $controller;
-
+    private $fac='';
+    private $inst='';
+    private $link='';
+    private $site='';
+    private $num1='';
+    private $num2='';
+    private $adres='';
+    private $fax='';
     public function __construct(){
         $this->controller = new pageContactCtrl();
     }
@@ -15,28 +22,28 @@ class contactElements{
           <legend>Gestion de Page de Contact </legend>
           <div class="item">
           <div>
-          <input type="text" name="facebook" placeholder="Facebook Link" required/>
+          <input type="text" name="facebook" value="'.$this->fac.'" placeholder="Facebook Link" required/>
           </div>
           <div>
-          <input type="text" name="insta" placeholder="Insta Link" required/>
+          <input type="text" name="insta" value="'.$this->inst.'" placeholder="Insta Link" required/>
           </div>
           <div>
-          <input type="text" name="linkedin" placeholder="LinkedIn Link" required/>
+          <input type="text" name="linkedin" value="'.$this->link.'"placeholder="LinkedIn Link" required/>
           </div>
           <div>
-          <input type="text" name="website" placeholder="Siteweb Lien" required/>
+          <input type="text" name="website" value="'.$this->site.'" placeholder="Siteweb Lien" required/>
           </div>
           <div>
-          <input type="text" name="adr" placeholder="Adress" required/>
+          <input type="text" name="adr" value="'.$this->adres.'" placeholder="Adress" required/>
           </div>
           <div>
-          <input type="text" name="num1" placeholder="Numero Tel 1" required/>
+          <input type="text" name="num1" value="'.$this->num1.'"placeholder="Numero Tel 1" required/>
           </div>
           <div>
-          <input type="text" name="num2" placeholder="Numero Tel 2" required/>
+          <input type="text" name="num2" value="'.$this->num2.'"placeholder="Numero Tel 2" required/>
           </div>
           <div>
-          <input type="text" name="fax" placeholder="Fax" required/>
+          <input type="text" name="fax" value="'.$this->fax.'"placeholder="Fax" required/>
           </div>
           </div>
           <hr/>
@@ -51,6 +58,7 @@ class contactElements{
      public function getTable(){
 
         $result=   $this->controller-> getInfoPage();
+      
         echo '
         
         <table>
@@ -94,6 +102,14 @@ class contactElements{
                if(isset($_GET['edit'])){
                  echo $_GET['edit'];
                  $id=$_GET['edit'];
+                 $this->fac=$result['facebook'];
+                 $this->inst=$result['insta'];
+                 $this->link=$result['linkedin'];
+                 $this->site=$result['website'];
+                 $this->num1=$result['numTel1'];
+                 $this->num2=$result['numTel2'];
+                 $this->adres=$result['address'];
+                 $this->fax=$result['fax'];
                }
         }else{
          echo ' </thead></table>';

@@ -17,48 +17,26 @@
      require_once ("../Controler/PresentationCtrl.php");
      $ctrl=new PresentationCtrl();
     $result= $ctrl->listePresentation();
+    echo '<div class="container">
+    <div class="row">';
     foreach( $result as $data){
    echo '
-    <div class="column">
-        <div class="col-md-8">
-            <div class="card" style="width: 35rem;">
+        <div class="col-md-6">
+            <div class="card"  >
             <p class="card-text">'.$data['paragraph'].'
-            </p>
-            <img  src="'.$data['imgUrl'].'" width="300px" height="300px">
+            </p>';
+            if(!empty($data['imgUrl'])){
+            echo'
+            <img  src="'.$data['imgUrl'].'" width="150px" height="150px">';
+          }
+          echo'
             </div>
-        </div>
-    </div>';
+        </div><br/><br/>
+   ';
      }
-     echo '
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>';?>
+     echo ' </div> </div>';
+    ?>
 
-<div class="container">
-<div class="row">
-<div class="col bg-info">1er élément</div>
-                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-                <div class="col bg-warning">2è élément</div>
-                <!--La classe bg-success ajoute un fond vert à l'élément-->
-                <div class="col bg-success">3è élément</div>
-                <div class="col bg-info">1er élément</div>
-</div>
-<div class="row">
-<div class="col bg-info">1er élément</div>
-                <!--La classe bg-warning ajoute un fond jaune à l'élément-->
-                <div class="col bg-warning">2è élément</div>
-                <!--La classe bg-success ajoute un fond vert à l'élément-->
-                <div class="col bg-success">3è élément</div>
-                <div class="col bg-info">1er élément</div>
-</div>
-
-</div>
 
   </body>
 </html>

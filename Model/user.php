@@ -39,8 +39,14 @@ class user{
 
     public static function deleteUserById($idUser){
         model::connexion();
-        $requete="DELETE FROM users WHERE id='$idUser'";
+        $requete="DELETE FROM users WHERE idUser='$idUser'";
         model::delete($requete);
+    }
+    public static function getUserById($id){
+        model::connexion();
+        $requete="SELECT * FROM users WHERE idUser='$id'";
+        $result=model::getField($requete);
+        return $result;
     }
 }
 ?>
