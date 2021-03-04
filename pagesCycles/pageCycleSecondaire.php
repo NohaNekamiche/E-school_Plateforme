@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
     <head>
         
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -14,9 +14,10 @@
     <body>
 
 <?php
-require_once "../../Vue/pageCyclesVue.php";
+require_once "../Vue/pageCyclesVue.php";
 $vue=new pageCyclesVue();
-$vue-> getMoyenVue();
+$vue->getSecondaireVue();
+$vue->getArticleByCycle('S');
 ?>
     </body>
 </html>

@@ -1,9 +1,10 @@
 <?php
 
+require_once "../Controler/ArtcileCtrl.php";
 class pageCyclesVue{
-
-
+    private $controller;
     public function __construct(){
+      $this->controller = new ArticleCtrl();
     }
 
 
@@ -25,10 +26,10 @@ class pageCyclesVue{
                   <div class="media d-flex">
                     <div class="media-body text-center ">
                       <h3>Emplois Du Temps Globale </h3>
-                      <img src="../../school/pagesImages/calender.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/calender.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
                      </div>
                       
                     </div>
@@ -47,10 +48,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Heure de Reception des Enseignants</h3>
-                      <img src="../../school/pagesImages/reception.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/reception.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -68,10 +69,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Informations Pratiques</h3>
-                      <img src="../../school/pagesImages/activities.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/activities.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -89,10 +90,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Restauration</h3>
-                      <img src="../../school/pagesImages/resto1.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/resto1.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../InfoRestauration.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../AccuielEcole/InfoRestauration.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -127,10 +128,10 @@ class pageCyclesVue{
                   <div class="media d-flex">
                     <div class="media-body text-center ">
                       <h3>Emplois Du Temps Globale </h3>
-                      <img src="../../school/pagesImages/calender.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/calender.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsMoyen.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsMoyen.php" role="button">Voir</a>
                      </div>
                       
                     </div>
@@ -149,10 +150,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Heure de Reception des Enseignants</h3>
-                      <img src="../../school/pagesImages/reception2.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/reception2.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../ReceptionProfCycles/ListeEnsReceptionMoyen.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../ReceptionProfCycles/ListeEnsReceptionMoyen.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -170,10 +171,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Informations Pratiques</h3>
-                      <img src="../../school/pagesImages/activities.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/activities.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -191,10 +192,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Restauration</h3>
-                      <img src="../../school/pagesImages/resto1.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/resto1.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../InfoRestauration.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../AccuielEcole/InfoRestauration.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -228,10 +229,10 @@ class pageCyclesVue{
                   <div class="media d-flex">
                     <div class="media-body text-center ">
                       <h3>Emplois Du Temps Globale </h3>
-                      <img src="../../school/pagesImages/calender.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/calender.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsSecondaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsSecondaire.php" role="button">Voir</a>
                      </div>
                       
                     </div>
@@ -250,10 +251,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Heure de Reception des Enseignants</h3>
-                      <img src="../../school/pagesImages/reception.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/reception.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../ReceptionProfCycles/ListeEnsReceptionSecondaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../ReceptionProfCycles/ListeEnsReceptionSecondaire.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -271,10 +272,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Informations Pratiques</h3>
-                      <img src="../../school/pagesImages/activietsS.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/activietsS.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../EmploisTempsCycles/EmploiTempsPrimaire.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -292,10 +293,10 @@ class pageCyclesVue{
                     </div>
                     <div class="media-body text-center">
                       <h3>Restauration</h3>
-                      <img src="../../school/pagesImages/resto1.jpeg" width="250px" height="250px">
+                      <img src="../school/pagesImages/resto1.jpeg" width="250px" height="250px">
                       <div class="align-self-center">
                       <hr/>
-                      <a class="btn btn-outline-dark" href="../InfoRestauration.php" role="button">Voir</a>
+                      <a class="btn btn-outline-dark" href="../AccuielEcole/InfoRestauration.php" role="button">Voir</a>
                      </div>
                     </div>
                   </div>
@@ -310,6 +311,36 @@ class pageCyclesVue{
       
      
     </div>';
+    }
+
+    public function getArticleByCycle($cycle){
+      echo '   <div class="row">';
+    $articles=$this->controller->getAllArticles();
+    foreach($articles as $article){
+    if( stripos($article['concerner'],$cycle)>0){
+      echo'
+      <div class="col-xl-3 col-sm-6 col-12"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-center">
+                  <h3>'.$article['titre'].'</h3>';
+                  echo " <img src=" . $article['imageUrl']  . " width='200px' height='250px' >";
+                  echo '
+                  <p>'.$article['descrption'].'</p><div class="btn-block">
+                  <div class="align-self-center">
+                  <hr/>
+                  <a class="btn btn-outline-dark" role="button">Voir</a>
+                 </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></div>';
+    }
+    }
     }
 
 }

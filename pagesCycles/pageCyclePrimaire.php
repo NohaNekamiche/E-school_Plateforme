@@ -14,9 +14,10 @@
     <body>
 
 <?php
-require_once "../../Vue/pageCyclesVue.php";
+require_once "../Vue/pageCyclesVue.php";
 $vue=new pageCyclesVue();
-$vue->getSecondaireVue();
+$vue->getPrimaireVue();
+$vue->getArticleByCycle('Pr');
 ?>
     </body>
 </html>
