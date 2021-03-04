@@ -101,6 +101,8 @@ class infopageVue{
           </fieldset>
           <hr/></form></div>';
     }
+
+  
 }
 
 ?>

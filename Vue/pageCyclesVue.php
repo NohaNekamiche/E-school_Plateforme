@@ -1,6 +1,7 @@
 <?php
 
 require_once "../Controler/ArtcileCtrl.php";
+require_once "../Controler/activiteCtrl.php";
 class pageCyclesVue{
     private $controller;
     public function __construct(){
@@ -312,7 +313,20 @@ class pageCyclesVue{
      
     </div>';
     }
-
+    public function getTitleSectionArticle(){
+      echo ' <div class="text-center">
+      <h2>Articles</h2>
+      <p>Cette partie contient les articles qui vous concerne. 
+     </p>
+  </div>';
+    }
+    public function getDebutActivities(){
+      echo ' <div class="grey-bg container-fluid"> <div class="text-center">
+      <h2>Activities</h2>
+      <p>Cette partie contient les articles qui vous concerne. 
+     </p>
+  </div>';
+  }
     public function getArticleByCycle($cycle){
       echo '   <div class="row">';
     $articles=$this->controller->getAllArticles();
@@ -326,12 +340,12 @@ class pageCyclesVue{
               <div class="media d-flex">
                 <div class="media-body text-center">
                   <h3>'.$article['titre'].'</h3>';
-                  echo " <img src=" . $article['imageUrl']  . " width='200px' height='250px' >";
+                  echo " <img src=" .$article['imageUrl'] . " width='200px' height='250px' >";
                   echo '
-                  <p>'.$article['descrption'].'</p><div class="btn-block">
+                  <p>'. substr($article['descrption'],300).'</p><div class="btn-block">
                   <div class="align-self-center">
                   <hr/>
-                  <a class="btn btn-outline-dark" role="button">Voir</a>
+                  <a class="btn btn-outline-primary" role="button">Voir</a>
                  </div>
                   </div>
                 </div>
@@ -341,6 +355,30 @@ class pageCyclesVue{
         </div></div>';
     }
     }
+    }
+    public function getActivities($id){
+      $actCtrl=new activiteCtrl();
+      $activityes=$actCtrl->getActovitiesByEleve($id);
+      echo '   <div class="row">';
+      foreach($activityes as $act){
+  
+          echo'
+          <div class="col-xl-3 col-sm-6 col-12"> 
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="media-body text-center">
+                 
+                      <h4>'.$act['activite'].'</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div></div>';
+        }
+
+        echo '<hr/><div/>';
     }
 
 }
