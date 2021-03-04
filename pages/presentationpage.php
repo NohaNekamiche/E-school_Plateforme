@@ -2,39 +2,25 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <title>Admin page</title>
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--  CSS Files -->
-    <link rel="stylesheet" href="../assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../assets/css/admin-style.css">
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <title>Presentation Page</title>
+          
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+
+
+    </head>
   <body>
 
     <?php 
-     require_once ("../Controler/PresentationCtrl.php");
-     $ctrl=new PresentationCtrl();
-    $result= $ctrl->listePresentation();
-    echo '<div class="container">
-    <div class="row">';
-    foreach( $result as $data){
-   echo '
-        <div class="col-md-6">
-            <div class="card"  >
-            <p class="card-text">'.$data['paragraph'].'
-            </p>';
-            if(!empty($data['imgUrl'])){
-            echo'
-            <img  src="'.$data['imgUrl'].'" width="150px" height="150px">';
-          }
-          echo'
-            </div>
-        </div><br/><br/>
-   ';
-     }
-     echo ' </div> </div>';
+      require_once ("../Vue/components/AccuielEcoleElements.php");
+      $vue=new AccuielEcoleElements();
+
+      $vue->getPresentationPage();
     ?>
 
 
