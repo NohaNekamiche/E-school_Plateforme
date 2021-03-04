@@ -1,5 +1,5 @@
 <?php
-require_once "../Controler/seanceCtrl.php";
+require_once ("../Controler/seanceCtrl.php");
 class EmploiTempsVue{
     private $controller;
     public function __construct(){

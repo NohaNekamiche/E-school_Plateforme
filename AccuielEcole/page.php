@@ -46,7 +46,7 @@
                 <div class="align-self-center">
                  
                 </div>
-                <div class="media-body text-right">
+                <div class="media-body text-center">
                   <h3>156</h3>
                   <span>New Comments</span>
                 </div>
@@ -63,7 +63,7 @@
                 <div class="align-self-center">
                  
                 </div>
-                <div class="media-body text-right">
+                <div class="media-body text-center">
                   <h3>64.89 %</h3>
                   <span>Bounce Rate</span>
                 </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-  
+  <hr/>
     <div class="row">
       <div class="col-xl-3 col-sm-6 col-12">
         <div class="card">
@@ -114,7 +114,7 @@
           <div class="card-content">
             <div class="card-body">
               <div class="media d-flex">
-                <div class="media-body text-left">
+                <div class="media-body text-center">
                   <h3 class="success">156</h3>
                   <span>New Clients</span>
                 </div>
@@ -149,7 +149,7 @@
           <div class="card-content">
             <div class="card-body">
               <div class="media d-flex">
-                <div class="media-body text-left">
+                <div class="media-body text-center">
                   <h3 class="primary">423</h3>
                   <span>Support Tickets</span>
                 </div>
