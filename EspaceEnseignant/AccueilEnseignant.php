@@ -12,20 +12,21 @@
       require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
-      
+      require_once "../Vue/EnseignantVues/infopageVue.php";
+      $vue2=new infopageVue();
       $vue1=new pageCyclesVue();
-      $eleveCtrl=new EleveCtrl();
 
-      echo '<div class="container"><h3>Emploi du temps</h3>';
-      $eleve=$eleveCtrl->getEleveById(3);
-      echo '</div><div class="align-self-center">';
-      $vue=new EmploiTempsVue();
-      $vue->getTable($eleve[0]['idNiv']);
+
+      echo '<h3 class="text-center">Liste Modules</h3><div class="testbox">';
+      $vue2->getListeModules(5);
       echo '</div>';
-      $vue1->getDebutActivities();
-      $vue1->getActivities(3);
+   //   $vue=new EmploiTempsVue();
+     // $vue->getTable($eleve[0]['idNiv']);
+     $vue2->getReception(5);
+
+  
       $vue1->getTitleSectionArticle();
-      $vue1->getArticleByCycle('M');
+      $vue1->getArticleByCycle('E');
 
       ?>
   </body>

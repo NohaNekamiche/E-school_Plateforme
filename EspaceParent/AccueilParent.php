@@ -22,10 +22,9 @@
       $vue=new EmploiTempsVue();
       $vue->getTable($eleve[0]['idNiv']);
       echo '</div>';
-      $vue1->getDebutActivities();
-      $vue1->getActivities(3);
+     
       $vue1->getTitleSectionArticle();
-      $vue1->getArticleByCycle('M');
+      $vue1->getArticleByCycle('Pa');
 
       ?>
   </body>

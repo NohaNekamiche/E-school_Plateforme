@@ -12,5 +12,12 @@ class modules{
         $request="SELECT * FROM modules WHERE idNiv='$idNiv'";
         return model::getField($request);
     }
+    public static function getModuleByIdMod($idMod){
+        model::connexion();
+        $request="SELECT * FROM modules WHERE idModule='$idMod'";
+        return model::request($request);
+    }
+
+
 }
 ?>

@@ -331,7 +331,8 @@ class pageCyclesVue{
       echo '   <div class="row">';
     $articles=$this->controller->getAllArticles();
     foreach($articles as $article){
-    if( stripos($article['concerner'],$cycle)>0){
+
+    if( stristr($article['concerner'],$cycle)==true){
       echo'
       <div class="col-xl-3 col-sm-6 col-12"> 
         <div class="card">

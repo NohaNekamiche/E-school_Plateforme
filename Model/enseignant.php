@@ -29,5 +29,11 @@ class enseignant{
         $requete="SELECT * From enseignants WHERE idModule='$id'";
         return model::request($requete);
     }
+
+    public static function getProfById($id){
+        model::connexion();
+        $requete="SELECT * FROM enseignants WHERE id='$id'";
+        return model::getField($requete);
+    }
 }
 ?>

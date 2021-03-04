@@ -13,5 +13,9 @@ class moduleCtrl{
         return modules::getModuleByIdNiv($idNiv);
     }
 
+    public function getModuleByIdMod($idMod){
+        return modules::getModuleByIdMod($idMod);
+    }
+
 }
 ?>

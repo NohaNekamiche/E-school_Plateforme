@@ -22,5 +22,8 @@ class enseignantCtrl{
     public function getprofByIdMod($id){
         return enseignant::getprofByIdMod($id);
     }
+    public function getProfById($id){
+        return enseignant::getProfById($id);
+    }
 }
 ?>
