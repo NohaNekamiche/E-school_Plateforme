@@ -12,7 +12,7 @@
       require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
-      
+      require_once "../Vue/noteVue.php";
       $vue1=new pageCyclesVue();
       $eleveCtrl=new EleveCtrl();
 
@@ -22,10 +22,15 @@
       $vue=new EmploiTempsVue();
       $vue->getTable($eleve[0]['idNiv']);
       echo '</div>';
+      $vue3=new noteVue();
+      $vue3->getNotes(3);
       $vue1->getDebutActivities();
       $vue1->getActivities(3);
       $vue1->getTitleSectionArticle();
       $vue1->getArticleByCycle('M');
+      
+
+      
 
       ?>
   </body>

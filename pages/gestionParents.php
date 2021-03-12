@@ -11,9 +11,10 @@ session_start();
   </head>
   <body>
     <div class="testbox">
+    
       <table >
       <caption >Liste des Parents D'éleves</caption>
-      <thead>
+      <tr>
       <th>Id</th>
       <th>Nom</th>
       <th>Prenom</th>
@@ -23,6 +24,7 @@ session_start();
       <th>N° Tel </th>
       <th>N° Tel </th>
       <th colspan="2">Action </th>
+      </tr>
       <?php 
           require_once "../Controler/parentCtrl.php";
           $ctrl=new parentCtrl();
@@ -49,7 +51,7 @@ session_start();
             </td>
             </tr>
       <?php }?>
-      </thead>
+  
 
       </table>
       </div>
@@ -57,7 +59,7 @@ session_start();
       <div class="testbox">
       <table >
       <caption >Liste D'éleves</caption>
-      <thead>
+      <tr>
       <th>Id</th>
       <th>Nom</th>
       <th>Prenom</th>
@@ -69,7 +71,7 @@ session_start();
       <th>N° Tel </th>
       <th>N° Tel </th>
       <th colspan="2">Action </th>
-     </thead>
+      </tr>
      <?php 
           require_once "../Controler/EleveCtrl.php";
           require_once "../Controler/niveauCtrl.php";

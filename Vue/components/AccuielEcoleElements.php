@@ -299,6 +299,12 @@ class AccuielEcoleElements{
       
     } echo '  </div>';
       }
+
+      public function getFooter(){
+        echo '';
+      }
+
+
 }
 
 ?>

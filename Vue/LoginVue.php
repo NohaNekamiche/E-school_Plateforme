@@ -40,5 +40,8 @@ class LoginVue{
                 else header("location: ./");
             }
         }
+        function loginEleve($username,$password){
+            $auth= $this->controller->login($username,$password); 
+        }
 }
 ?>
