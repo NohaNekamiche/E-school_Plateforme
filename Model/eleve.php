@@ -25,6 +25,12 @@ class eleve{
         $result=model::request($requete);
         return $result;
     }
+    public static function getEleveByIdUser($id){
+        model::connexion();
+        $requete="SELECT * From eleves where idUser='$id'";
+        $result=model::getField($requete);
+        return $result;
+    }
 
 }
 ?>

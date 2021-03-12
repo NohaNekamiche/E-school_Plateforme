@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,23 +13,25 @@
       <?php
       require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
+      require_once "../Controler/niveauCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
       require_once "../Vue/noteVue.php";
       $vue1=new pageCyclesVue();
       $eleveCtrl=new EleveCtrl();
-
+      $nivCtrl=new niveauCtrl();
       echo '<div class="container"><h3>Emploi du temps</h3>';
-      $eleve=$eleveCtrl->getEleveById(3);
+      $eleve=$eleveCtrl->getEleveByIdUser($_SESSION['userId']);
       echo '</div><div class="align-self-center">';
       $vue=new EmploiTempsVue();
-      $vue->getTable($eleve[0]['idNiv']);
+      $vue->getTable($eleve['idNiv']);
       echo '</div>';
       $vue3=new noteVue();
-      $vue3->getNotes(3);
+      $niveau=$nivCtrl->getNiveauById($eleve['idNiv']);
+      $vue3->getNotes($eleve['id']);
       $vue1->getDebutActivities();
-      $vue1->getActivities(3);
+      $vue1->getActivities($eleve['id']);
       $vue1->getTitleSectionArticle();
-      $vue1->getArticleByCycle('M');
+      $vue1->getArticleByCycle($niveau[0]['cycle']);
       
 
       

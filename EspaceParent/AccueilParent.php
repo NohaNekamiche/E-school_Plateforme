@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +14,7 @@
       require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
-      
+      echo $_SESSION['userId'];
       $vue1=new pageCyclesVue();
       $eleveCtrl=new EleveCtrl();
 

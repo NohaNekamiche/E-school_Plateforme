@@ -15,7 +15,7 @@
 
             $log->getForm();
             if(isset($_POST["Login"])){
-                $log->loginEleve($_POST['username'],$_POST['password']);
+                $log->loginParent($_POST['username'],$_POST['password']);
             }
         ?>
 

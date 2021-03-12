@@ -26,5 +26,9 @@ class  EleveCtrl{
         }
         return $result;
     }
+
+    public function getEleveByIdUser($id){
+        return eleve::getEleveByIdUser($id);
+    }
 }
 ?>

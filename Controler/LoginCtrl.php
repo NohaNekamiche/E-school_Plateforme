@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__."/../model/user.php";
+session_start();
 class LoginCtrl{
 private $user;
 

@@ -42,6 +42,13 @@ class LoginVue{
         }
         function loginEleve($username,$password){
             $auth= $this->controller->login($username,$password); 
+            if($auth)   header("location: ".$_SESSION["ROOT_URL"]."/projet_web/EspaceEleve/AccueilEleve.php");
+                else header("location: ./");
+        }
+        function loginParent($username,$password){
+            $auth= $this->controller->login($username,$password); 
+            if($auth)   header("location: ".$_SESSION["ROOT_URL"]."/projet_web/EspaceParent/AccueilParent.php");
+                else header("location: ./");
         }
 }
 ?>
