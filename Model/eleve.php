@@ -31,6 +31,10 @@ class eleve{
         $result=model::getField($requete);
         return $result;
     }
-
+    public static function getElevesByIdParent($idParent){
+        model::connexion();
+        $request="SELECT * FROM eleves WHERE idParent='$idParent'";
+        return model::request($request);
+    }
 }
 ?>

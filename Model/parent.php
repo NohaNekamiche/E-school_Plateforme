@@ -43,5 +43,11 @@ class parents{
         $requeste="SELECT * FROM parents WHERE id='$id'";
         return model::getField($requeste);
     }
+
+    public static function getParentByIdUser($idUser){
+        model::connexion();
+        $requeste="SELECT * FROM parents WHERE idUser='$idUser'";
+        return model::getField($requeste);
+    }
 }
 ?>

@@ -23,5 +23,9 @@ class parentCtrl{
     public function getParentById($id){
         return parents::getParentById($id);
     }
+
+    public function getParentByIdUser($idUser){
+        return parents::getParentByIdUser($idUser);
+    }
 }
 ?>

@@ -18,6 +18,7 @@ class EmploiTempsVue{
         <th>Mercredi</th>
         <th>Jeudi</th>
         </tr>';
+
         $get=$this->controller->getSeanceByDate('Dimanche',$idNiv);
         foreach($get as $seance){
                 $idMod=$seance['idModule'];
@@ -47,6 +48,7 @@ class EmploiTempsVue{
     }
 
 
+  
     public function getAllSeances(){
         return $this->controller->getAllSeances();
     }

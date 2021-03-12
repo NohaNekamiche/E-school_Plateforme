@@ -30,5 +30,9 @@ class  EleveCtrl{
     public function getEleveByIdUser($id){
         return eleve::getEleveByIdUser($id);
     }
+
+    public function getElevesByIdParent($idParent){
+        return eleve::getElevesByIdParent($idParent);
+    }
 }
 ?>

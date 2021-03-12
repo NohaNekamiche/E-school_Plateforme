@@ -1,5 +1,3 @@
-<?php 
-session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,17 +12,21 @@ session_start();?>
       require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
+      require_once "../Vue/ParentVues/infopageVue.php";
       echo $_SESSION['userId'];
       $vue1=new pageCyclesVue();
       $eleveCtrl=new EleveCtrl();
-
-      echo '<div class="container"><h3>Emploi du temps</h3>';
-      $eleve=$eleveCtrl->getEleveById(3);
-      echo '</div><div class="align-self-center">';
-      $vue=new EmploiTempsVue();
-      $vue->getTable($eleve[0]['idNiv']);
-      echo '</div>';
-     
+      $enfantsVue=new infopageVue();
+      $parentCtrl=new parentCtrl();
+      $parent=$parentCtrl->getParentByIdUser($_SESSION['userId']);
+      if(count($parent)){
+      $enfantsVue->getListEnfants($parent['id']); 
+   
+      $enfantsVue->getEnfantsEmplois($parent['id']);
+      
+      $enfantsVue->getNotesEnfants($parent['id']);
+      $enfantsVue->getActivities($parent['id']);
+    }
       $vue1->getTitleSectionArticle();
       $vue1->getArticleByCycle('Pa');
 
