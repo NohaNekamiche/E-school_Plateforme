@@ -35,5 +35,17 @@ class enseignant{
         $requete="SELECT * FROM enseignants WHERE id='$id'";
         return model::getField($requete);
     }
+    public static function getEnseignantByIdUser($id){
+        model::connexion();
+        $requete="SELECT * From enseignants where idUser='$id'";
+        $result=model::getField($requete);
+        return $result;
+    }
+    public static function updateENseignant($id,$idModule){
+        model::connexion();
+        $requete="UPDATE enseignants SET idModule='$idModule' WHERE id='$id'";
+        model::addRequest($requete);
+
+    }
 }
 ?>

@@ -13,6 +13,7 @@
   </head>
   <body>
       <?php
+      session_start();
       require_once "../Vue/EleveVues/infopageVue.php";
       require_once "../Controler/EleveCtrl.php";
       $eleveCtrl=new EleveCtrl();

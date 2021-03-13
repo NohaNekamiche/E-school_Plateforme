@@ -34,8 +34,8 @@ class LoginVue{
         function login($username,$password){
             if(isset($username) && isset($password)){
                 echo $username;
-                echo  $this->controller->login($username,$password);
-                $auth= $this->controller->login($username,$password);
+                echo  $this->controller->loginAdmin($username,$password);
+                $auth= $this->controller->loginAdmin($username,$password);
                 if($auth)   header("location: ".$_SESSION["ROOT_URL"]."/projet_web/AccueilAdmin/pageAccieulAdmin.php");
                 else header("location: ./");
             }
@@ -48,6 +48,11 @@ class LoginVue{
         function loginParent($username,$password){
             $auth= $this->controller->login($username,$password); 
             if($auth)   header("location: ".$_SESSION["ROOT_URL"]."/projet_web/EspaceParent/AccueilParent.php");
+                else header("location: ./");
+        }
+        function loginEnseignant($username,$password){
+            $auth= $this->controller->login($username,$password); 
+            if($auth)   header("location: ".$_SESSION["ROOT_URL"]."/projet_web/EspaceEnseignant/AccueilEnseignant.php");
                 else header("location: ./");
         }
 }

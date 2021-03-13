@@ -25,5 +25,12 @@ class enseignantCtrl{
     public function getProfById($id){
         return enseignant::getProfById($id);
     }
+
+    public function getEnseignantByIdUser($id){
+        return enseignant::getEnseignantByIdUser($id);
+    }
+    public function updateENseignant($id,$idModule){
+        enseignant::updateENseignant($id,$idModule);
+    }
 }
 ?>

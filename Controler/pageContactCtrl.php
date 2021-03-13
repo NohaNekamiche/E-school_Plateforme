@@ -7,8 +7,8 @@ class pageContactCtrl{
         $this->page = new contact();
     }
 
-    public function ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax) {
-            contact::ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax);
+    public function ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax,$email,$descpt) {
+            contact::ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax,$email,$descpt);
     }
     public function getInfoPage(){
         return contact::getInfoPage();

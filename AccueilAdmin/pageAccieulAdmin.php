@@ -69,7 +69,7 @@
                   <div class="col-md-4">
                     <div class="service-item seventh-item">
                       <div class="icon"></div>
-                      <h4>Gestion de Page Contact</h4>      
+                      <h4><a href="../pages/ContactVue.php">Gestion de Page Contact</a></h4>      
                     </div>
                   </div>
                   <div class="col-md-4">

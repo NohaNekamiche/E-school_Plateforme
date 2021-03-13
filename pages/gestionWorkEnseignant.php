@@ -73,22 +73,25 @@
         </div>
         <div class="item">
             <div class="name-item">
-                   <label> Cycle d'etude</label>
-                  <select name="cycle"> 
-                  <?php
+            <label>Cycle d'etude</label>
+                            <select name="cycle"> 
+                                    <option value="P">Primaire</option>
+                                    <option value="M">Moyen</option>
+                                    <option value="S">Secondaire</option>
+                                    </select>
+                   
+               
+     
+                    <label> Annee D'etude</label>
+    
+              <select name="annee"> 
+                
+              <?php
                    require_once "../Controler/niveauCtrl.php";
                    $ctrl=new niveauCtrl();
                    $result=$ctrl->getAllNiveau();
                    foreach($result as $niv){
-                    echo "<option value='" . $niv['cycle'] . "'>" .$niv['cycle'] . "</option>";
-                   }
-                  ?>
-                    </select>
-                    <label> Annee D'etude</label>
-    
-              <select name="annee"> 
-                  <?php
-                   foreach($result as $niv){
+                  
                     echo "<option value='" . $niv['annee'] . "'>" .$niv['annee'] . "</option>";
                    }
                   ?>
@@ -106,13 +109,14 @@
             </div> 
           </div>
           <div class="name-item">
+          <label> Module</label>
           <select name="module">
           <?php
           require_once "../Controler/moduleCtrl.php";
           $modctr=new moduleCtrl();
           $modules=$modctr->getAllModules();
           foreach($modules as $m){
-          echo "<option value='" . $m['nomModule'] . "'>" .$m['idNiv'] . "</option>";
+          echo "<option value='" . $m['idModule'] . "'>" .$m['nomModule'] . "</option>";
         }
           ?>
           </select>
@@ -137,6 +141,7 @@
 <?php
 require_once "../Controler/receptionCtrl.php";
 require_once "../Controler/niveauCtrl.php";
+require_once "../Controler/enseignantCtrl.php";
 
 $recp=new receptionCtrl();
 $nivCtrl= new niveauCtrl();
@@ -146,7 +151,10 @@ $recp->insertReception($_POST['prof'],$_POST['heure'],$_POST['jour']);
 if(isset($_POST['Ajouter'])){
 $niv=$nivCtrl->getNivId($_POST['cycle'],$_POST['annee'],$_POST['grp']);
 
-echo $niv[0]['idNiv'];
+//echo $niv['idNiv'];
+$ctrl1=new enseignantCtrl(); 
+$ctrl1->updateENseignant($_POST['prof'],$_POST['module']);
+
 }
 ?>
 </body>

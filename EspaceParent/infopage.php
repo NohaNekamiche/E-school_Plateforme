@@ -15,11 +15,16 @@
   </head>
   <body>
       <?php
+      session_start();
       require_once "../Vue/ParentVues/infopageVue.php";
       $vue=new infopageVue();
       $vue->getMenu();
-      $vue->getInfoAccount(33);
-      $vue->getInfoParent();
+  
+      $parentCtrl=new parentCtrl();
+      $parent=$parentCtrl->getParentByIdUser($_SESSION['userId']);
+      if(count($parent)){
+      $vue->getInfoAccount($parent['id']);
+      $vue->getInfoParent();}
       $vue->getContact();
       ?>
 </body>

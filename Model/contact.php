@@ -3,11 +3,10 @@
 require_once (__DIR__."/model.php");
 class contact{
 
-    public static function ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax){
+    public static function ajouterInfoPage($facebook,$insta,$link,$website,$adr,$num1,$num2,$fax,$email,$descpt){
         model::connexion();
-        $requete="INSERT INTO pagecontact(facebook,insta,linkedin,website,
-        address,numTel1,numTel2,fax)
-        VALUES ('$facebook','$insta','$link','$website','$adr','$num1','$num2','$fax')";
+        $requete="INSERT INTO pagecontact(facebook,insta,linkedin,website,address,numTel1,numTel2,fax,email,descpt)
+        VALUES ('$facebook','$insta','$link','$website','$adr','$num1','$num2','$fax','$email','$descpt')";
         model::AddRequest($requete);
     }
     public static function getInfoPage(){

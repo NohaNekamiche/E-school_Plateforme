@@ -127,7 +127,7 @@ section {
 
 .main-banner .banner-content .banner-caption em {
 	font-style: normal;
-	color: #535ba0;
+	color:  #1c87c9;
 }
 
 .main-banner .banner-content .banner-caption span {
@@ -233,7 +233,8 @@ section {
 	background-image: url(../images/icon_hover_03.png);
 }
 .services .service-item:hover {
-	background-color: #535ba0;
+	background-color:  #1c87c9;
+
 }
 .services .service-item:hover h4,
 .services .service-item:hover p {
@@ -611,7 +612,7 @@ right: 0px;
     display: -ms-flex;
     display: flex;
     position: relative;
-    background-color: #535ba0;
+    background-color:  #1c87c9;
     margin: -100px -100px 100px -100px;
 }
 

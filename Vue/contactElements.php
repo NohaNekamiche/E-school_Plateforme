@@ -10,6 +10,8 @@ class contactElements{
     private $num2='';
     private $adres='';
     private $fax='';
+    private $email='';
+    private $descpt='';
     public function __construct(){
         $this->controller = new pageContactCtrl();
     }
@@ -45,6 +47,12 @@ class contactElements{
           <div>
           <input type="text" name="fax" value="'.$this->fax.'"placeholder="Fax" required/>
           </div>
+          <div>
+          <input type="text" name="email" value="'.$this->email.'"placeholder="Email" required/>
+          </div>
+          <div>
+          <input type="text" name="descpt" value="'.$this->descpt.'"placeholder="Description" required/>
+          </div>
           </div>
           <hr/>
             <fieldset>
@@ -52,6 +60,7 @@ class contactElements{
             <button type="submit" name="Ajouter">Sauvegarder</button>
             </div>
             </fieldset>
+            
           </fieldset>
           </form></div>';
     }
@@ -62,8 +71,9 @@ class contactElements{
         echo '
         
         <table>
-      <caption><h3>Information de la page</h3></caption>
+      
         <thead>
+        <th>Description</th>
         <th>Facebook lien</th>
         <th>Insta lien</th>
         <th>LinkedIn lien</th>
@@ -72,10 +82,14 @@ class contactElements{
         <th>N Tel 1</th>
         <th>N Tel 2</th>
         <th>Fax</th>
+        <th>Email</th>
+        
+
         <th colspan="2">Action </th>
         ';
         if(count($result)>0){
                echo '<tr>
+               <td>'.$result['descpt'].'</td>
                <td>'.$result['facebook'].'</td>
                <td>'.$result['insta'].'</td>
                <td>'.$result['linkedin'].'</td>
@@ -84,6 +98,8 @@ class contactElements{
                <td>'.$result['numTel1'].'</td>
                <td>'.$result['numTel2'].'</td>
                <td>'.$result['fax'].'</td>
+               <td>'.$result['email'].'</td>
+         
                <td> <a href="ContactVue.php?edit='.$result['id'].'"
                ><button class="btn-block">Modifier</button></a>
              </td>
@@ -110,6 +126,8 @@ class contactElements{
                  $this->num2=$result['numTel2'];
                  $this->adres=$result['address'];
                  $this->fax=$result['fax'];
+                 $this->email=$result['email'];
+                 $this->descpt=$result['descpt'];
                }
         }else{
          echo ' </thead></table>';
@@ -120,7 +138,7 @@ class contactElements{
      public function ajouterInfo(){
          if(isset($_POST['Ajouter'])){
              $this->controller->ajouterInfoPage($_POST['facebook'],$_POST['insta'],$_POST['linkedin'],
-            $_POST['website'],$_POST['adr'],$_POST['num1'],$_POST['num2'],$_POST['fax']);
+            $_POST['website'],$_POST['adr'],$_POST['num1'],$_POST['num2'],$_POST['fax'],$_POST['email'],$_POST['descpt']);
          }
      }
 }

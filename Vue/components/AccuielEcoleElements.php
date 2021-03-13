@@ -105,7 +105,7 @@ class AccuielEcoleElements{
           </li>
           <li class="nav-item dropdown">
           
-            <button class="dropbtn">Cycles d’enseignement </button>
+            <a class="dropbtn">Cycles d’enseignement </a>
                 <div class="dropdown-content">
                 <a href="../pagesCycles/pageCyclePrimaire.php" role="button">Primaire</a>
                 <a href="../pagesCycles/pageCycleMoyen.php" role="button">Moyen</a>
@@ -113,13 +113,13 @@ class AccuielEcoleElements{
                 </div>
           </li>
           <li class="nav-item">
-          <button class="dropbtn">Espace Eleves</a></button>
+          <a class="dropbtn" href="../EspaceEleve">Espace Eleves</a>
           </li>
           <li class="nav-item">
-          <button class="dropbtn">Espace Parents d"Eleve</button>
+          <a class="dropbtn" href="../EspaceParent">Espace Parents d"Eleve</a>
           </li>
           <li class="nav-item">
-          <button class="dropbtn">Contact</button>
+          <a class="dropbtn" href="../pages/contactPage.php">Contact</a>
           </div>
          
          
@@ -138,6 +138,17 @@ class AccuielEcoleElements{
     </ul>
       </div>
         </nav>';
+    }
+    public function getDebutOldArticle(){
+      echo '
+      <div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+    <div class="row">
+      <div class="col-12 mt-3 mb-1">
+        <h4 class="text-uppercase">Articles</h4>
+        <p>Dans cette section on vous presente les anciens articles publie dans l"ecole </p>
+      </div>
+    </div>';
     }
     public function getDebutArticle(){
         echo '
@@ -251,10 +262,13 @@ class AccuielEcoleElements{
           }  
         }
          echo '   
-         
-    </section>
+         <div class="text-center">   <button><a  class="dropbtn" href="../pages/ActicleOld.php">Plus</a></button></div>
+    </section>    
+    </div>
+
+
     
-    </div>'  ;
+    '  ;
       }
 
 
@@ -290,14 +304,20 @@ class AccuielEcoleElements{
           }
           $i=0;
         }
+        echo '</section></div>';
       }
 
       public function getTitleRestauration(){
-        echo '    
-        <div class="text-center">
-          <h1 >Plan de Restauration </h1>
-          <p>Repas de chaque semaines pour les trois cycles.</p></div<
-        ';
+    
+        echo '
+        <div class="grey-bg container-fluid">
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-12 mt-3 mb-1">
+        <h1 >Plan de Restauration </h1>
+        <p>Repas de chaque semaines pour les trois cycles.</p>
+        </div>
+      </div>';
       }
 
       public function getPresentationPage(){
@@ -339,7 +359,9 @@ class AccuielEcoleElements{
       
 
       
-    } echo '  </div>';
+    } echo '
+    
+    <button ><a href="../AccuielEcole/accueil.php"><h2>Retour</h2></a></button>  </div>';
       }
       public function getContact(){
         $pageCtrl=new pageContactCtrl();
@@ -384,8 +406,34 @@ class AccuielEcoleElements{
             </footer>';
         }
     }
+    public function getPageContact(){
+      echo '  <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
+      <form action="/">
+        <h3>Contacter Nous</h3>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Full name">
+          <input type="text" name="name" placeholder="Email">
+          <input type="text" name="name" placeholder="Object">
+        </div>
+        <p>Message</p>
+        <div>
+          <textarea rows="4"></textarea>
+        </div>
+        <button type="submit" href="/">Envoyer</button>
+      </form>
+      
+    </div>';
+  }
 
 
+  public function getActivities(){
+    
+  }
 }
 
 ?>

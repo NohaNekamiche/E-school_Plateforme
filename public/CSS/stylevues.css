@@ -11,6 +11,11 @@ html, body {
     font-weight: 400;
     color: #1c87c9;
     }
+    h2 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #fff;
+      }
     p {
     margin: 0 0 5px;
     }
@@ -56,7 +61,7 @@ html, body {
     outline: none;
     }
     input::placeholder {
-    color: #666;
+    color: #fff;
     }
     button {
     width: 100%;
@@ -67,6 +72,7 @@ html, body {
     font-weight: 400;
     color: #fff;
     }
+   
     button:hover {
     background: #2371a0;
     }    

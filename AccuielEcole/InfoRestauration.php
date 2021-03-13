@@ -21,8 +21,12 @@
   <?php
    require_once ("../Vue/components/AccuielEcoleElements.php");
    $vue=new AccuielEcoleElements();
+   $vue->getMenu();
+
    $vue-> getTitleRestauration();
    $vue->getRestarationInfo();
+ 
+   $vue->getContact();
 
   ?>
   </body>

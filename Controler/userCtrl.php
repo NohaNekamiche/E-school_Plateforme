@@ -1,6 +1,6 @@
 <?php
 require_once "../Model/user.php";
-session_start();
+
 class userCtrl{
     private $user;
     public function __construct(){

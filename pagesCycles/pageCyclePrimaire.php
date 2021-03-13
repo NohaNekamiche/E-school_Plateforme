@@ -29,6 +29,7 @@ $vue1->getMenu();
 $vue=new pageCyclesVue();
 $vue->getPrimaireVue();
 $vue->getArticleByCycle('Pr');
+$vue1->getContact();
 ?>
     </body>
 </html>

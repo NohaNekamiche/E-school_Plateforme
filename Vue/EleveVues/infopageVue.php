@@ -15,6 +15,7 @@ class infopageVue{
     }
     public function getInfoAccount($id){
         $this->eleve=  $this->controller->getEleveById($id);
+        if(count($this->eleve)>0){
         $this->user=userCtrl::getUserById($this->eleve[0]['idUser']);
         $val='vjh';
         echo ' <div class="testbox">
@@ -39,7 +40,7 @@ class infopageVue{
               
               </div>
         </fieldset>
-      ';
+      ';}
     }
 
     public function getInfoEleve(){
