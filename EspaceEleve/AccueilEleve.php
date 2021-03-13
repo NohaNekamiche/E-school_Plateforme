@@ -14,7 +14,6 @@
   </head>
   <body>
       <?php
-      require_once "../Vue/EmploiTempsVue.php";
       require_once "../Controler/EleveCtrl.php";
       require_once "../Controler/niveauCtrl.php";
       require_once "../Vue/pageCyclesVue.php";
@@ -25,12 +24,8 @@
       $nivCtrl=new niveauCtrl();
       $eleveVue=new infopageVue();
       $eleveVue->getMenu();
-      echo '<div class="container"><h3>Emploi du temps</h3>';
       $eleve=$eleveCtrl->getEleveByIdUser($_SESSION['userId']);
-      echo '</div><div class="align-self-center">';
-      $vue=new EmploiTempsVue();
-      $vue->getTable($eleve['idNiv']);
-      echo '</div>';
+      $eleveVue->getEmploiTemps($eleve);
       $vue3=new noteVue();
       $niveau=$nivCtrl->getNiveauById($eleve['idNiv']);
       $vue3->getNotes($eleve['id']);
@@ -38,6 +33,7 @@
       $vue1->getActivities($eleve['id']);
       $vue1->getTitleSectionArticle();
       $vue1->getArticleByCycle($niveau[0]['cycle']);
+      $eleveVue->getContact();
       
 
       

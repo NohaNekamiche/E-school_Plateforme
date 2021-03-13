@@ -264,7 +264,7 @@ class infopageVue{
          
           
           <li class="nav-item">
-          <a class="dropbtn" href="">Contact</a>
+          <a class="dropbtn" href="../EspaceParent/contactPage.php">Contact</a>
           </div>
          
          
@@ -327,6 +327,29 @@ class infopageVue{
             
             </footer>';
         }
+    }
+    public function getPageContact(){
+        echo '  <div class="main-block">
+        <div class="left-part">
+          <i class="fas fa-envelope"></i>
+          <i class="fas fa-at"></i>
+          <i class="fas fa-mail-bulk"></i>
+        </div>
+        <form action="/">
+          <h3>Contacter Nous</h3>
+          <div class="info">
+            <input class="fname" type="text" name="name" placeholder="Full name">
+            <input type="text" name="name" placeholder="Email">
+            <input type="text" name="name" placeholder="Object">
+          </div>
+          <p>Message</p>
+          <div>
+            <textarea rows="4"></textarea>
+          </div>
+          <button type="submit" href="/">Envoyer</button>
+        </form>
+        
+      </div>';
     }
 }
 

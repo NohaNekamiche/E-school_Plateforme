@@ -4,6 +4,8 @@ require_once "../Controler/userCtrl.php";
 require_once "../Controler/parentCtrl.php";
 require_once "../Controler/niveauCtrl.php";
 require_once "../Controler/pageContactCtrl.php";
+require_once ("../Controler/seanceCtrl.php");
+require_once "../Controler/moduleCtrl.php";
 class infopageVue{
     private $controller;
     private $user;
@@ -126,7 +128,7 @@ class infopageVue{
          
           
           <li class="nav-item">
-          <a class="dropbtn" href="">Contact</a>
+          <a class="dropbtn" href="../EspaceEleve/contactPage.php">Contact</a>
           </div>
          
          
@@ -191,7 +193,74 @@ class infopageVue{
         }
     }
 
-  
+    public function getEmploiTemps($e){
+        $controller = new seanceCtrl();
+        $modCtrl=new moduleCtrl();
+        echo '        <fieldset><legend>'.$e['nom'].'  '.$e['prenom'].' </legend>
+        <table>
+        <caption >Liste D"emploi du temps</caption>
+        <tr>
+        <th>Dimanche</th>
+        <th>Lundi</th>
+        <th>Mardi</th>
+        <th>Mercredi</th>
+        <th>Jeudi</th>
+        </tr>';
+        
+        $get=$controller->getSeanceByDate('Dimanche',$e['idNiv']);
+        foreach($get as $seance){
+               // $idMod=$seance['idModule'];
+                $m=$modCtrl->getModuleByIdMod($seance['idModule']);
+                echo '<tr><td>'.$m[0]['nomModule'].'<br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td>';
+        }
+        $get=$controller->getSeanceByDate('Lundi',$e['idNiv']);
+        foreach($get as $seance){
+            $m=$modCtrl->getModuleByIdMod($seance['idModule']);
+                echo '<td>'.$m[0]['nomModule'].'<br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td>';
+        }
+        $get=$controller->getSeanceByDate('Mardi',$e['idNiv']);
+        foreach($get as $seance){
+            $m=$modCtrl->getModuleByIdMod($seance['idModule']);
+                echo '<td>'.$m[0]['nomModule'].'<br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td>';
+        }
+        $get=$controller->getSeanceByDate('Mercredi',$e['idNiv']);
+        foreach($get as $seance){
+            $m=$modCtrl->getModuleByIdMod($seance['idModule']);
+                echo '<td>'.$m[0]['nomModule'].'<br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td>';
+        }
+        $get=$controller->getSeanceByDate('Jeudi',$e['idNiv']);
+        foreach($get as $seance){
+            $m=$modCtrl->getModuleByIdMod($seance['idModule']);
+                echo '<td>'.$m[0]['nomModule'].'<br/>'.$seance['heureDebut']."_".$seance['heureFin'].'</td>';
+        }
+        echo '</table>        </fieldset><hr/> ';
+
+
+    }
+
+    public function getPageContact(){
+        echo '  <div class="main-block">
+        <div class="left-part">
+          <i class="fas fa-envelope"></i>
+          <i class="fas fa-at"></i>
+          <i class="fas fa-mail-bulk"></i>
+        </div>
+        <form action="/">
+          <h3>Contacter Nous</h3>
+          <div class="info">
+            <input class="fname" type="text" name="name" placeholder="Full name">
+            <input type="text" name="name" placeholder="Email">
+            <input type="text" name="name" placeholder="Object">
+          </div>
+          <p>Message</p>
+          <div>
+            <textarea rows="4"></textarea>
+          </div>
+          <button type="submit" href="/">Envoyer</button>
+        </form>
+        
+      </div>';
+    }
 }
 
 ?>

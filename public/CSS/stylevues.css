@@ -20,8 +20,26 @@ html, body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #1c87c9;
+ 
     }
+    .fas {
+      margin: 25px 10px 0;
+      font-size: 72px;
+      color: #1c87c9;
+      }
+      .fa-envelope {
+      transform: rotate(-20deg);
+      }
+      .fa-at , .fa-mail-bulk{
+      transform: rotate(10deg);
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      }
     form {
     padding: 25px;
     margin: 25px;

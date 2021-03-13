@@ -22,6 +22,7 @@
       if(count($eleve)>0){
       $vue->getInfoAccount($eleve['id']);
       $vue->getInfoEleve();
+      $vue->getContact();
     }
 
       ?>
