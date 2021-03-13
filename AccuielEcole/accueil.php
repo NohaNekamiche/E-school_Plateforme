@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
     <!--- extra links-->
     <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
     </head>
@@ -21,13 +22,9 @@
 <?php
       require_once ("../Vue/components/AccuielEcoleElements.php");
       $vue=new AccuielEcoleElements();
-      //$db =model::connexion();
-      //$requete = "SELECT imgUrl FROM diaporama ORDER BY id ASC ";
-      //$result=model::request($requete);
       $result=$vue->getSlides();
-     // $diaporama->getDiaporama($result);
       ?>
-      <h1 class="text-center">Diaporama </h1>
+      <h1 class="text-center">Notre Ecole </h1>
       <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -38,15 +35,13 @@
                             $actives='';
                             if($i == 0){
                                 $actives='active';
-
                             }
                         ?>
                         <li data-target="#myCarousel" data-slide-to="<?= $i ;?>" class="<?= $actives ; ?>"></li>
-                        <!--li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li-->
+                    
                         <?php $i++;}?>
                     </ol>
-                    <!-- Wrapper for slides -->
+                  
                     <div class="carousel-inner">
                         <?php 
                         $i=0;
@@ -62,7 +57,7 @@
                         <?php $i++;}?>
                     </div>
 
-                    <!-- Left and right controls -->
+
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
@@ -79,6 +74,7 @@
      $vue->getMenu();
     $vue->getDebutArticle();
      $vue->getArticle();
+     $vue->getContact();
     ?>
 
 

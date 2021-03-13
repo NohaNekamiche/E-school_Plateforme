@@ -4,6 +4,7 @@ require_once "../Controler/diaporamaCtrl.php";
 require_once "../Controler/ArtcileCtrl.php";
 require_once "../Controler/RepasCtrl.php";
 require_once "../Controler/PresentationCtrl.php";
+require_once "../Controler/pageContactCtrl.php";
 class AccuielEcoleElements{
     private $controller;
 
@@ -22,7 +23,6 @@ class AccuielEcoleElements{
                         $actives="";
                         if($i == 0){
                             $actives="active";
-
                         }
                     ?>
                     <li data-target="#myCarousel" data-slide-to="<?= $i ;?>" class="<?= $actives ; ?>"></li>
@@ -150,6 +150,43 @@ class AccuielEcoleElements{
         </div>
       </div>';
       }
+      public function getOldArticles(){
+        $id=ArticleCtrl::getIdLastArticle();
+        $ctrl=new ArticleCtrl();
+        $cpt=$id['max_id']-8;
+
+        echo '   <div class="row">';
+        while($cpt>0){
+          $article= $ctrl->getArticleById(($cpt));
+          $cpt--;
+          if(count($article)>0){
+        echo'
+        <div class="col-xl-3 col-sm-6 col-12"> 
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-center">
+                    <h3>'.$article[0]['titre'].'</h3>
+                    ';
+                    echo " <img src=" . $article[0]['imageUrl']  . " width='50px' height='250px' >";
+                    echo '
+                    <p>'.substr($article[0]['descrption'],0,200).'</p><div class="btn-block">
+                    <button type="submit" name="Ajouter">Plus</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></div>';
+        }
+        }
+        echo '   
+         
+        </section>
+        
+        </div>'  ;
+      }
      public  function getArticle(){
         $id=ArticleCtrl::getIdLastArticle();
         $ctrl=new ArticleCtrl();
@@ -169,7 +206,7 @@ class AccuielEcoleElements{
                 <div class="media d-flex">
                   <div class="media-body text-center">
                     <h3>'.$article[0]['titre'].'</h3>
-                    <span>New Posts</span>4';
+                    ';
                     echo " <img src=" . $article[0]['imageUrl']  . " width='50px' height='250px' >";
                     echo '
                     <p>'.substr($article[0]['descrption'],0,300).'</p><div class="btn-block">
@@ -182,11 +219,12 @@ class AccuielEcoleElements{
           </div></div>';
         }
         $cpt=$cpt-$i;
+        
         $i=0;
         while($i<4){
 
                         $article= $ctrl->getArticleById(($cpt-$i));
-            $i++;
+           
             if(count($article)){
             echo'
             <div class="col-xl-3 col-sm-6 col-12"> 
@@ -199,7 +237,7 @@ class AccuielEcoleElements{
                     ';
                     echo " <img src=" . $article[0]['imageUrl']  . " width='50px' height='250px' >";
                     echo ' 
-                    <p>'.$article[0]['descrption'].'</p><div class="btn-block">
+                    <p>'.substr($article[0]['descrption'],0,200).'</p><div class="btn-block">
                     <button type="submit" name="Ajouter">Plus</button>
                     </div>
                 </div>
@@ -207,10 +245,14 @@ class AccuielEcoleElements{
             </div>
             </div>
             </div></div>';
-          }  }
+            $i++;
+          }else{
+            $cpt--;
+          }  
+        }
          echo '   
          
-    </section> 
+    </section>
     
     </div>'  ;
       }
@@ -299,10 +341,49 @@ class AccuielEcoleElements{
       
     } echo '  </div>';
       }
-
-      public function getFooter(){
-        echo '';
-      }
+      public function getContact(){
+        $pageCtrl=new pageContactCtrl();
+        $info=$pageCtrl->getInfoPage();
+        if(count($info)>0){
+            echo '
+            <br/>
+            <footer class="footer">
+            <div class="container bottom_border">
+            <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+            <h3 class="headin5_amrc col_white_amrc pt2">Trouver Nous</h3>
+            <p><i class="fa fa-location-arrow"></i>   '.$info['address'].'</p>
+            <p><i class="fa fa-phone"></i>    '.$info['numTel1'].' / '.$info['numTel2'].'  </p>
+            <p><i class="fa fa-phone"></i>    '.$info['fax'].'  </p>
+            <p><i class="fa fa fa-envelope"></i>   '.$info['email'].'  </p>
+            
+            
+            </div>
+            
+            
+            <div class=" col-sm-4 col-md  col-6 col">
+            <h3 class="headin5_amrc col_white_amrc pt2">E-school</h3>
+            <!--headin5_amrc-->
+                                    <p>'.$info['descpt'].'</p>
+             
+            <!--footer_ul_amrc ends here-->
+            </div>
+            </div>
+            </div>
+            <div class="container">    
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="text-center">Copyright @2021 | Creer Par <a href="'.$info['website'].'">E-school</a></p>
+            <ul class="social_footer_ul">
+            <li><a href="'.$info['facebook'].'"><i class="fa fa-facebook-f"></i></a></li>
+            <li><a href="'.$info['insta'].'"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="'.$info['linkedin'].'"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+            </div>
+            
+            </footer>';
+        }
+    }
 
 
 }

@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once (__DIR__."/model.php");
 class article{
    
@@ -15,6 +15,8 @@ class article{
         $requete = "INSERT INTO articles (titre,descrption,imageUrl,concerner)
                 VALUES ('$titre','$description','$img','$concerne')";
         model::addRequest($requete);
+
+        echo "article added";
 
     }
 

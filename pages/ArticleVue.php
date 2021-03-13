@@ -61,7 +61,7 @@
           require_once '../Vue/articleElements.php';
           $vue= new articleElements();
           $vue->getArticleForm();
-          $vue-> ajouterArticle();
+          $vue->ajouterArticle();
           if(isset($_GET['delete']))
           {
             $ctrl=new ArticleCtrl();
