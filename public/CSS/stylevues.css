@@ -128,7 +128,7 @@ html, body {
   }
   /*footer*/
 .col_white_amrc { color:#FFF;}
-footer { width:100%; background-color:#263238; min-height:250px; padding:10px 0px 25px 0px ;}
+footer { width:100%; background-color:#1c87c9; min-height:250px; padding:10px 0px 25px 0px ;}
 .pt2 { padding-top:40px ; margin-bottom:20px ;}
 footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .mb10 { padding-bottom:15px ;}
@@ -144,7 +144,7 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .footer_ul2_amrc li a:hover { text-decoration:none;}
 .footer_ul2_amrc li i { margin-top:5px;}
 
-.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.bottom_border { border-bottom:1px solid #fff; padding-bottom:20px;}
 .foote_bottom_ul_amrc {
 	list-style-type:none;
 	padding:0px;

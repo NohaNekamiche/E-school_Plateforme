@@ -20,7 +20,7 @@
 <div class="container bottom_border">
 <div class="row">
 <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+<h5 class="headin5_amrc col_white_amrc pt2">Trouver Nous</h5>
 <!--headin5_amrc-->
 <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
@@ -52,7 +52,7 @@
 <div class="container">
 
 <!--foote_bottom_ul_amrc ends here-->
-<p class="text-center">Copyright @2021 | Designed With by <a href="#">E-school</a></p>
+<p class="text-center">Copyright @2021 | Creer Par <a href="#">E-school</a></p>
 
 <ul class="social_footer_ul">
 <li><a href="http://webenlance.com"><i class="fa fa-facebook-f"></i></a></li>

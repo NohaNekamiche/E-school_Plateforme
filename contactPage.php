@@ -11,7 +11,7 @@
       margin: 0;
       font-family: Roboto, Arial, sans-serif;
       font-size: 14px;
-      color: #666;
+     
       }
       h1 {
       margin: 0 0 20px;
@@ -27,7 +27,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: #1c87c9;
+ 
       }
       form {
       padding: 25px;
@@ -38,7 +38,7 @@
       .fas {
       margin: 25px 10px 0;
       font-size: 72px;
-      color: #fff;
+      color: #1c87c9;
       }
       .fa-envelope {
       transform: rotate(-20deg);
